@@ -52,4 +52,6 @@ int main(void) {
         ++count;
         delay_ms(10);
     }
+
+    return 0;
 }

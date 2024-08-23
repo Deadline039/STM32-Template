@@ -7,7 +7,6 @@
  */
 
 #include "includes.h"
-#include <stdio.h>
 
 /**
  * @brief 主函数
@@ -18,5 +17,6 @@ int main(void) {
     HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
     bsp_init();
     freertos_start();
+
     return 0;
 }

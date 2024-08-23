@@ -18,8 +18,6 @@ Bsp层添加了按键、LED、串口（包括DMA）和C库底层IO重定义。�
 
 ![](./assets/config_wizard.png)
 
-
-
 # 使用方法
 
 1. 到Releases下载ept文件。
