@@ -4,6 +4,8 @@ F103基于正点原子MiniSTM32制作。F429基于正点原子阿波罗板制作
 
 程序下载后可以看到跑马灯，串口1每隔1秒发送`xxx Template, Runnting Time: xxx ms. `按下按键在串口1发送`xxx Pressed`.
 
+感谢@[shanlingjiangjie](https://github.com/shanlingjiangjie) @[PickingChip](https://github.com/PickingChip) @[meiwenhuaqingnian](https://github.com/meiwenhuaqingnian) 的测试。
+
 ## [更新日志](./CHANGELOG.md)
 
 # 预设文件
