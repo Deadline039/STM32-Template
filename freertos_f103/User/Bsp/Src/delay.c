@@ -7,6 +7,7 @@
  */
 
 #include "delay.h"
+
 #include "FreeRTOS.h"
 #include "task.h"
 
@@ -60,8 +61,8 @@ void delay_us(uint32_t us) {
     uint32_t told, tnow, tcnt = 0;
     uint32_t reload = SysTick->LOAD; /* LOAD的值 */
     ticks = us * g_fac_us;           /* 需要的节拍数 */
+    told = SysTick->VAL;             /* 刚进入时的计数器值 */
 
-    told = SysTick->VAL; /* 刚进入时的计数器值 */
     while (1) {
         tnow = SysTick->VAL;
         if (tnow != told) {

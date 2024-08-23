@@ -2,7 +2,7 @@
  * @file    retarget_io.c
  * @author  Deadline039
  * @brief   重定向C库的底层IO
- * @version 1.0
+ * @version 1.1
  * @date    2024-07-29
  * @ref     正点原子, 野火, CMSIS
  * @ref
@@ -10,15 +10,20 @@
  * https://developer.arm.com/documentation/100073/0622/The-Arm-C-and-C---Libraries/ISO-C-library-implementation-definition
  */
 
-#include "retarget_io.h"
+#include "stm32f1xx_hal.h"
+
 #include <stdio.h>
+
+/* stdout串口 */
+#define STDOUT_UART USART1
+/* stderr串口 */
+#define STDERR_UART USART1
 
 /**
  * @defgroup 重定向stdout, stderr
  * @{
  */
 
-#if ((RETARGET_STDOUT == 1) || (RETARGET_STDERR == 1))
 #if defined(__ARMCC_VERSION) /* Compiler */
 
 #if (__ARMCC_VERSION >= 6010050) /* 使用AC6编译器时 */
@@ -95,46 +100,16 @@ FILE __stderr;
  * @return 写入的字符
  */
 int fputc(int ch, FILE *file) {
-
-#if ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1))
     if (file == stdout) {
-#endif /* ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1)) */
-
-#if (RETARGET_STDOUT == 1)
-#if (RE_STDOUT_TARGET == 0) /* 使用串口 */
         while ((STDOUT_UART->SR & 0X40) == 0)
             ; /* 等待上一个字符发送完成 */
 
         STDOUT_UART->DR = (uint8_t)ch; /* 将要发送的字符 ch 写入到DR寄存器 */
-#elif (RE_STDOUT_TARGET == 1) /* 使用ITM */
 
-        ITM_SendChar(ch);
-
-#endif /* RE_STDOUT_TARGET */
-
-#endif /* RETARGET_STDOUT == 1 */
-
-#if ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1))
     } else if (file == stderr) {
-#endif /* ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1)) */
-
-#if (RETARGET_STDERR == 1)
-#if (RE_STDERR_TARGET == 0) /* 使用串口 */
         while ((STDERR_UART->SR & 0X40) == 0)
             ; /* 等待上一个字符发送完成 */
-
-        STDERR_UART->DR = (uint8_t)ch; /* 将要发送的字符 ch 写入到DR寄存器 */
-#elif (RE_STDERR_TARGET == 1) /* 使用ITM */
-
-        ITM_SendChar(ch);
-
-#endif /* RE_STDERR_TARGET */
-
-#endif /* RETARGET_STDERR == 1 */
-
-#if ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1))
     }
-#endif /* ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1)) */
 
     return ch;
 }
@@ -152,14 +127,7 @@ int fputc(int ch, FILE *file) {
  * @return 字符串长度
  */
 int _write(int file, char *ptr, int len) {
-
-#if ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1))
     if (file == 1) {
-#endif /* ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1)) */
-
-#if (RETARGET_STDOUT == 1)
-#if (RE_STDOUT_TARGET == 0) /* 使用串口 */
-
         for (int i = 0; i < len; i++) {
             while ((STDOUT_UART->SR & 0X40) == 0)
                 ; /* 等待上一个字符发送完成 */
@@ -167,24 +135,7 @@ int _write(int file, char *ptr, int len) {
             STDOUT_UART->DR =
                 (uint8_t)ptr[i]; /* 将要发送的字符 ch 写入到DR寄存器 */
         }
-
-#elif (RE_STDOUT_TARGET == 1) /* 使用ITM */
-
-        for (int i = 0; i < len; i++) {
-            ITM_SendChar(ptr[i]);
-        }
-
-#endif /* RE_STDOUT_TARGET */
-
-#endif /* RETARGET_STDOUT == 1 */
-
-#if ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1))
     } else if (file == 2) {
-#endif /* ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1)) */
-
-#if (RETARGET_STDERR == 1)
-#if (RE_STDERR_TARGET == 0) /* 使用串口 */
-
         for (int i = 0; i < len; i++) {
             while ((STDERR_UART->SR & 0X40) == 0)
                 ; /* 等待上一个字符发送完成 */
@@ -192,21 +143,7 @@ int _write(int file, char *ptr, int len) {
             STDERR_UART->DR =
                 (uint8_t)ptr[i]; /* 将要发送的字符 ch 写入到DR寄存器 */
         }
-
-#elif (RE_STDERR_TARGET == 1) /* 使用ITM */
-
-        for (int i = 0; i < len; i++) {
-            ITM_SendChar(ptr[i]);
-        }
-
-#endif /* RE_STDERR_TARGET */
-
-#endif /* RETARGET_STDERR == 1 */
-
-#if ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1))
     }
-#endif /* ((RETARGET_STDOUT == 1) && (RETARGET_STDERR == 1)) */
-
     return len;
 }
 
@@ -220,8 +157,6 @@ void _sys_exit(int x) {
 }
 
 #endif /* Compiler */
-
-#endif /* ((RETARGET_STDOUT == 1) || (RETARGET_STDERR == 1)) */
 
 /**
  * @}
@@ -243,16 +178,11 @@ void _sys_exit(int x) {
  * @param line 行数
  */
 void __aeabi_assert(const char *expr, const char *file, int line) {
-#if (RETARGET_STDERR == 1)
     fprintf(stderr, "Assertion failed: %s, file: %s, line: %d\r\n", expr, file,
             line);
-#else  /* RETARGET_STDERR == 1 */
-    fprintf(stdout, "Assertion failed: %s, file: %s, line: %d\r\n", expr, file,
-            line);
-#endif /* RETARGET_STDERR == 1 */
 }
 
-#endif /* Compiler */
+#endif /* __ARMCC_VERSION */
 
 /**
  * @}

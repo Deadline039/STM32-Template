@@ -2,7 +2,7 @@
  * @file    bsp.c
  * @author  Deadline039
  * @brief   bsp层配置程序
- * @version 0.1
+ * @version 1.0
  * @date    2024-07-29
  */
 

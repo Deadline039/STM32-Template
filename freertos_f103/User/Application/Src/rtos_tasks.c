@@ -2,7 +2,7 @@
  * @file    rtos_tasks.c
  * @author  Deadline039
  * @brief   RTOS任务
- * @version 0.1
+ * @version 1.0
  * @date    2024-01-31
  */
 
@@ -73,7 +73,7 @@ void task2(void *pvParameters) {
     UNUSED(pvParameters);
 
     while (1) {
-        printf("Alientek MiniSTM32 FreeRTOS project template. Running time: %d "
+        printf("Alientek MiniSTM32 F103 FreeRTOS project template. Running time: %d "
                "ms. \r\n",
                xTaskGetTickCount());
         vTaskDelay(1000);

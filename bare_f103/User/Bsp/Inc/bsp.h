@@ -2,7 +2,7 @@
  * @file    bsp.h
  * @author  Deadline039
  * @brief   bsp层头文件
- * @version 0.1
+ * @version 1.0
  * @date    2024-07-29
  */
 

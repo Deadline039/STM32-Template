@@ -21,8 +21,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f1xx_it.h"
-#include "FreeRTOS.h"
 #include "stm32f1xx_hal.h"
+
+#include "FreeRTOS.h"
 #include "task.h"
 
 /** @addtogroup STM32F1xx_HAL_Examples

@@ -47,10 +47,8 @@ void key_init(void) {
  * @brief 按键扫描
  *
  * @param mode 是否支持连按
- *  0-不支持连按, 1-支持连按
+ *  @arg 0-不支持连按, 1-支持连按
  * @return 按下的按键
- *  @retval 按下:`KEY0_GPIO_PRES ~ WKUP_GPIO_PRES`
- *  @retval 未按下:`0`
  * @note 注意此函数有响应优先级,`KEY0 > KEY1 > WK_UP`
  */
 key_press_t key_scan(uint8_t mode) {

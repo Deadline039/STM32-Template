@@ -1,0 +1,32 @@
+{
+    "folders": [
+        {
+            "name": "bare_f103",
+            "path": "bare_f103"
+        },
+        {
+            "name": "bare_f429",
+            "path": "bare_f429"
+        },
+        {
+            "name": "freertos_f103",
+            "path": "freertos_f103"
+        },
+        {
+            "name": "freertos_f429",
+            "path": "freertos_f429"
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "*.embeddedhtml": "html",
+            "*.s": "arm",
+            "*.cpp": "cpp",
+            "retarget_io.h": "c",
+            "stm32f1xx_hal.h": "c",
+            "bsp.h": "c",
+            "uart.h": "c",
+            "led.h": "c"
+        }
+    }
+}
