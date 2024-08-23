@@ -18,7 +18,7 @@ Bsp层添加了按键、LED、串口（包括DMA）和C库底层IO重定义。�
 
 ![](./assets/config_wizard.png)
 
-**UART默认使用函数指针回调**。如果用弱函数重定义方式回调的话，在`User/Application/Inc/stm32fxxx_hal_conf.h`中更改。
+
 
 # 使用方法
 
