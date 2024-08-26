@@ -109,6 +109,8 @@ int fputc(int ch, FILE *file) {
     } else if (file == stderr) {
         while ((STDERR_UART->SR & 0X40) == 0)
             ; /* 等待上一个字符发送完成 */
+
+        STDERR_UART->DR = (uint8_t)ch; /* 将要发送的字符 ch 写入到DR寄存器 */
     }
 
     return ch;
