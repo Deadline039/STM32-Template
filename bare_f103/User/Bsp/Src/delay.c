@@ -57,12 +57,3 @@ void delay_us(uint32_t us) {
         }
     }
 }
-
-/**
- * @brief 重定义HAL库延时到delay_ms
- *
- * @param Delay 延时的毫秒数
- */
-void HAL_Delay(uint32_t Delay) {
-    delay_ms(Delay);
-}

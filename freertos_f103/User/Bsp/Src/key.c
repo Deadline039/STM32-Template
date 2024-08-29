@@ -8,6 +8,8 @@
 
 #include "key.h"
 
+#include "delay.h"
+
 /**
  * @brief 按键初始化函数
  *
@@ -57,7 +59,7 @@ uint8_t key_scan(uint8_t mode) {
         key_up = 1; /* 支持连按 */
     }
     if (key_up && (KEY0 == 0 || KEY1 == 0 || WK_UP == 1)) {
-        HAL_Delay(10);
+        delay_ms(10);
         key_up = 0;
         if (KEY0 == 0) {
             return KEY0_PRESS;

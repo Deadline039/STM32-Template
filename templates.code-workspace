@@ -26,7 +26,8 @@
             "stm32f1xx_hal.h": "c",
             "bsp.h": "c",
             "uart.h": "c",
-            "led.h": "c"
+            "led.h": "c",
+            "delay.h": "c"
         }
     }
 }

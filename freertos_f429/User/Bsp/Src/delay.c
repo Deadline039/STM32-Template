@@ -36,12 +36,19 @@ void delay_init(uint16_t sysclk) {
 }
 
 /**
- * @brief 延时n毫秒(阻塞式)
+ * @brief 延时n毫秒
  *
  * @param ms 延时的毫秒数
+ * @note 如果RTOS开始运行, 使用任务延时.
+ *       如果没有开始运行, 阻塞延时
+ * @warning 禁止在中断中使用!
  */
 void delay_ms(uint32_t ms) {
-    delay_us((uint32_t)(ms * 1000));
+    if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED) {
+        vTaskDelay(ms);
+    } else {
+        delay_us((uint32_t)(ms * 1000));
+    }
 }
 
 /**
@@ -70,21 +77,5 @@ void delay_us(uint32_t us) {
                 break; /* 时间超过/等于要延迟的时间,则退出 */
             }
         }
-    }
-}
-
-/**
- * @brief 重定义HAL库延时
- *
- * @param Delay 延时的毫秒数
- * @note 如果RTOS开始运行, 使用任务延时.
- *       如果没有开始运行, 使用delay_ms(阻塞延时)
- * @warning 禁止在中断中使用!
- */
-void HAL_Delay(uint32_t Delay) {
-    if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED) {
-        vTaskDelay(Delay);
-    } else {
-        delay_ms(Delay);
     }
 }
