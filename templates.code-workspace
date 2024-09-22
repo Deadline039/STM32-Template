@@ -19,15 +19,21 @@
     ],
     "settings": {
         "files.associations": {
-            "*.embeddedhtml": "html",
             "*.s": "arm",
             "*.cpp": "cpp",
+            "*.embeddedhtml": "html",
             "retarget_io.h": "c",
             "stm32f1xx_hal.h": "c",
             "bsp.h": "c",
             "uart.h": "c",
             "led.h": "c",
-            "delay.h": "c"
+            "delay.h": "c",
+            "ring_fifo.h": "c",
+            "bsp_uart.h": "c",
+            "core_delay.h": "c",
+            "assert.h": "c",
+            "string.h": "c",
+            "stdarg.h": "c"
         }
     }
 }

@@ -73,8 +73,7 @@ void task2(void *pvParameters) {
     UNUSED(pvParameters);
 
     while (1) {
-        printf("Alientek MiniSTM32 F103 FreeRTOS project template. Running time: %d "
-               "ms. \r\n",
+        printf("STM32F103 FreeRTOS project template. Running time: %d ms. \r\n",
                xTaskGetTickCount());
         vTaskDelay(1000);
     }

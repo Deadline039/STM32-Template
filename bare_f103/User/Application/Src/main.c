@@ -41,8 +41,7 @@ int main(void) {
         }
 
         if (count == 100) {
-            printf("Alientek MiniSTM32 F103 bare project template. Running time: %d "
-                   "ms. \r\n",
+            printf("STM32F103 bare project template. Running time: %d ms. \r\n",
                    HAL_GetTick());
             LED0_TOGGLE();
             LED1_TOGGLE();
@@ -52,6 +51,4 @@ int main(void) {
         ++count;
         delay_ms(10);
     }
-
-    return 0;
 }

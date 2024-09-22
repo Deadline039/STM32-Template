@@ -9,33 +9,45 @@
     "folders": [
       {
         "name": "Bsp",
-        "files": [
+        "files": [],
+        "folders": [
           {
-            "path": "User/Bsp/Src/bsp.c"
+            "name": "OnChip",
+            "files": [
+              {
+                "path": "User/Bsp/OnChip/Src/bsp_core.c"
+              },
+              {
+                "path": "User/Bsp/OnChip/Src/bsp_dma_uart.c"
+              },
+              {
+                "path": "User/Bsp/OnChip/Src/bsp_uart.c"
+              },
+              {
+                "path": "User/Bsp/OnChip/Src/core_delay.c"
+              },
+              {
+                "path": "User/Bsp/OnChip/Src/retarget_io.c"
+              }
+            ],
+            "folders": []
           },
           {
-            "path": "User/Bsp/Src/dma_uart.c"
-          },
-          {
-            "path": "User/Bsp/Src/key.c"
-          },
-          {
-            "path": "User/Bsp/Src/led.c"
-          },
-          {
-            "path": "User/Bsp/Src/uart.c"
-          },
-          {
-            "path": "User/Bsp/Src/ring_fifo.c"
-          },
-          {
-            "path": "User/Bsp/Src/retarget_io.c"
-          },
-          {
-            "path": "User/Bsp/Src/delay.c"
+            "name": "OnBoard",
+            "files": [
+              {
+                "path": "User/Bsp/OnBoard/Src/bsp.c"
+              },
+              {
+                "path": "User/Bsp/OnBoard/Src/key.c"
+              },
+              {
+                "path": "User/Bsp/OnBoard/Src/led.c"
+              }
+            ],
+            "folders": []
           }
-        ],
-        "folders": []
+        ]
       },
       {
         "name": "Application",
@@ -231,6 +243,15 @@
         "name": "Docs",
         "files": [],
         "folders": []
+      },
+      {
+        "name": "Utils",
+        "files": [
+          {
+            "path": "User/Utils/Src/ring_fifo.c"
+          }
+        ],
+        "folders": []
       }
     ]
   },
@@ -313,7 +334,25 @@
         "speed": 8000,
         "otherCmds": ""
       },
-      "uploadConfigMap": {},
+      "uploadConfigMap": {
+        "JLink": {
+          "bin": "",
+          "baseAddr": "",
+          "cpuInfo": {
+            "vendor": "ST",
+            "cpuName": "STM32F103RC"
+          },
+          "proType": 1,
+          "speed": 8000,
+          "otherCmds": ""
+        },
+        "OpenOCD": {
+          "bin": "",
+          "target": "stm32f1x",
+          "interface": "stlink",
+          "baseAddr": "0x08000000"
+        }
+      },
       "custom_dep": {
         "name": "default",
         "incList": [
@@ -321,7 +360,9 @@
           "Drivers/STM32F1xx_HAL_Driver/Inc",
           "Drivers/CMSIS/Device/ST/STM32F1xx/Include",
           "User/Application/Inc",
-          "User/Bsp/Inc",
+          "User/Bsp/OnChip/Inc",
+          "User/Bsp/OnBoard/Inc",
+          "User/Utils/Inc",
           "Middlewares/FreeRTOS/include",
           "Middlewares/FreeRTOS/portable/GCC/ARM_CM3"
         ],
@@ -410,127 +451,6 @@
             "misc-controls": "--diag_suppress=L6329",
             "ro-base": "0x08000000",
             "rw-base": "0x20000000"
-          }
-        }
-      }
-    },
-    "Release": {
-      "excludeList": [
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_adc_ex.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_adc.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_dac_ex.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_dac.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_exti.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_flash_ex.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_flash.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_i2c.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_i2s.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_iwdg.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_rtc_ex.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_rtc.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_sd.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_spi.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_sram.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_tim_ex.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_tim.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_wwdg.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_can.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_crc.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_hal_usart.c",
-        "<virtual_root>/Drivers/CMSIS/DSP",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f1xx_ll_fsmc.c"
-      ],
-      "toolchain": "AC6",
-      "compileConfig": {
-        "cpuType": "Cortex-M3",
-        "floatingPointHardware": "none",
-        "useCustomScatterFile": false,
-        "scatterFilePath": "<YOUR_SCATTER_FILE>.sct",
-        "storageLayout": {
-          "RAM": [
-            {
-              "tag": "IRAM",
-              "id": 1,
-              "mem": {
-                "startAddr": "0x20000000",
-                "size": "0x0000C000"
-              },
-              "isChecked": true,
-              "noInit": false
-            }
-          ],
-          "ROM": [
-            {
-              "tag": "IROM",
-              "id": 1,
-              "mem": {
-                "startAddr": "0x08000000",
-                "size": "0x00040000"
-              },
-              "isChecked": true,
-              "isStartup": true
-            }
-          ]
-        },
-        "options": "null"
-      },
-      "uploader": "JLink",
-      "uploadConfig": {
-        "bin": "",
-        "baseAddr": "",
-        "cpuInfo": {
-          "vendor": "ST",
-          "cpuName": "STM32F103RC"
-        },
-        "proType": 1,
-        "speed": 8000,
-        "otherCmds": ""
-      },
-      "uploadConfigMap": {},
-      "custom_dep": {
-        "name": "default",
-        "incList": [
-          "Drivers/CMSIS/Include",
-          "Drivers/STM32F1xx_HAL_Driver/Inc",
-          "Drivers/CMSIS/Device/ST/STM32F1xx/Include",
-          "User/Application/Inc",
-          "User/Bsp/Inc",
-          "Middlewares/FreeRTOS/include",
-          "Middlewares/FreeRTOS/portable/GCC/ARM_CM3"
-        ],
-        "libList": [],
-        "defineList": [
-          "STM32F103xE",
-          "USE_HAL_DRIVER"
-        ]
-      },
-      "builderOptions": {
-        "AC6": {
-          "version": 3,
-          "beforeBuildTasks": [],
-          "afterBuildTasks": [],
-          "global": {
-            "output-debug-info": "enable",
-            "use-microLIB": true
-          },
-          "c/cpp-compiler": {
-            "optimization": "level-0",
-            "language-c": "c11",
-            "language-cpp": "c++11",
-            "warnings": "all-warnings",
-            "C_FLAGS": "-Wno-padded -Wno-unsafe-buffer-usage -Wno-reserved-identifier -Wno-missing-noreturn -Wno-covered-switch-default -Wno-switch-enum -Wno-missing-prototypes -Wno-newline-eof -Wno-gnu-pointer-arith -Wno-declaration-after-statement -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-double-promotion -Wno-missing-field-initializers -Wno-undef -Wno-self-assign -Wno-extra-semi-stmt -Wno-missing-variable-declarations -Wno-cast-align -Wno-implicit-float-conversion -Wno-missing-braces -Wno-cast-qual -Wno-format-nonliteral -Wno-gnu-binary-literal",
-            "CXX_FLAGS": "-Wno-padded -Wno-unsafe-buffer-usage -Wno-reserved-identifier -Wno-missing-noreturn -Wno-covered-switch-default -Wno-switch-enum -Wno-missing-prototypes -Wno-newline-eof -Wno-gnu-pointer-arith -Wno-declaration-after-statement -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-double-promotion -Wno-missing-field-initializers -Wno-undef -Wno-self-assign -Wno-extra-semi-stmt -Wno-missing-variable-declarations -Wno-cast-align -Wno-implicit-float-conversion -Wno-missing-braces -Wno-cast-qual -Wno-format-nonliteral -Wno-gnu-binary-literal",
-            "link-time-optimization": true,
-            "one-elf-section-per-function": true,
-            "short-enums#wchar": true
-          },
-          "asm-compiler": {
-            "$use": "asm-auto",
-            "misc-controls": "--diag_suppress=1950"
-          },
-          "linker": {
-            "output-format": "elf",
-            "misc-controls": "--diag_suppress=L6329"
           }
         }
       }
