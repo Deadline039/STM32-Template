@@ -45,7 +45,7 @@ int main(void) {
         }
 
         if (count == 100) {
-            printf("Alientek Apollo F429 bare project template. Running time: %d "
+            printf("STM32F429 bare project template. Running time: %d "
                    "ms. \r\n",
                    HAL_GetTick());
             LED0_TOGGLE();
@@ -56,6 +56,4 @@ int main(void) {
         ++count;
         delay_ms(10);
     }
-
-    return 0;
 }

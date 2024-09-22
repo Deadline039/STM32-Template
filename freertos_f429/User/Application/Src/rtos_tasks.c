@@ -73,8 +73,7 @@ void task2(void *pvParameters) {
     UNUSED(pvParameters);
 
     while (1) {
-        printf("Alientek Apollo F429 FreeRTOS project template. Running time: %d "
-               "ms. \r\n",
+        printf("STM32F429 FreeRTOS project template. Running time: %d ms. \r\n",
                xTaskGetTickCount());
         vTaskDelay(1000);
     }
