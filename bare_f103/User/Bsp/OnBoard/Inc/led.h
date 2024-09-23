@@ -19,9 +19,9 @@ extern "C" {
 #define LED0_GPIO_ENABLE() __HAL_RCC_GPIOA_CLK_ENABLE()
 #define LED0_GPIO_PIN      GPIO_PIN_8
 
-#define LED1_GPIO_PORT     GPIOB
-#define LED1_GPIO_ENABLE() __HAL_RCC_GPIOB_CLK_ENABLE()
-#define LED1_GPIO_PIN      GPIO_PIN_1
+#define LED1_GPIO_PORT     GPIOD
+#define LED1_GPIO_ENABLE() __HAL_RCC_GPIOD_CLK_ENABLE()
+#define LED1_GPIO_PIN      GPIO_PIN_2
 
 /* LED0 */
 #define LED0(x)                                                                \

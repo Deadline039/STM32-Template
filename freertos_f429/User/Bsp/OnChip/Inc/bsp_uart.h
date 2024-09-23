@@ -124,8 +124,8 @@ extern UART_HandleTypeDef uart_handle;
 
 void uart_init(void);
 
-int uart_printf(const char *__format, ...);
-int uart_scanf(const char *__format, ...);
+int uart_printf(UART_HandleTypeDef *huart, const char *__format, ...);
+int uart_scanf(UART_HandleTypeDef *huart, const char *__format, ...);
 
 #if (UARTx_USE_DMA_TX == 1)
 uint32_t uart_dmatx_write(const void *data, size_t len);

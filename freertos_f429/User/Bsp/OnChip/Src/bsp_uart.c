@@ -120,19 +120,24 @@ void UARTx_IRQHandler(void) {
 /**
  * @brief 串口格式化输出
  *
+ * @param huart 串口句柄
  * @param __format 格式字符串
  * @return 成功填充的变量个数
  */
-int uart_printf(const char *__format, ...) {
+int uart_printf(UART_HandleTypeDef *huart, const char *__format, ...) {
     int res;
     uint16_t len;
+    va_list ap;
 
-    while (__HAL_UART_GET_FLAG(&uart_handle, UART_FLAG_TC) == RESET) {
+    if (huart->Instance != UARTx) {
+        return 0;
+    }
+
+    while (__HAL_UART_GET_FLAG(huart, UART_FLAG_TC) == RESET) {
         /* 等待发送完毕 */
         delay_ms(1);
     }
 
-    va_list ap;
     va_start(ap, __format);
     res = vsnprintf(uart_buffer, sizeof(uart_buffer), __format, ap);
     va_end(ap);
@@ -140,9 +145,9 @@ int uart_printf(const char *__format, ...) {
     len = strlen(uart_buffer);
 
     if (uart_handle.hdmatx == NULL) {
-        HAL_UART_Transmit(&uart_handle, (uint8_t *)uart_buffer, len, 1000);
+        HAL_UART_Transmit(huart, (uint8_t *)uart_buffer, len, 1000);
     } else {
-        HAL_UART_Transmit_DMA(&uart_handle, (uint8_t *)uart_buffer, len);
+        HAL_UART_Transmit_DMA(huart, (uint8_t *)uart_buffer, len);
     }
 
     return res;
@@ -151,13 +156,18 @@ int uart_printf(const char *__format, ...) {
 /**
  * @brief 等待串口接收到数据并填充
  *
+ * @param huart 串口句柄
  * @param __format 格式字符串
  * @return 成功填充的变量个数
  */
-int uart_scanf(const char *__format, ...) {
+int uart_scanf(UART_HandleTypeDef *huart, const char *__format, ...) {
     uint16_t str_len = 0;
     int res;
     va_list ap;
+
+    if (huart->Instance != UARTx) {
+        return 0;
+    }
 
 #if (UARTx_USE_DMA_RX == 1)
     while (str_len == 0) {
@@ -165,8 +175,8 @@ int uart_scanf(const char *__format, ...) {
         delay_ms(1);
     }
 #else  /* UARTx_USE_DMA_RX == 1 */
-    HAL_UARTEx_ReceiveToIdle(&uart_handle, (uint8_t *)uart_buffer,
-                             sizeof(uart_buffer), &str_len, 0xFFFF);
+    HAL_UARTEx_ReceiveToIdle(huart, (uint8_t *)uart_buffer, sizeof(uart_buffer),
+                             &str_len, 0xFFFF);
 #endif /* UARTx_USE_DMA_RX == 1 */
 
     va_start(ap, __format);
