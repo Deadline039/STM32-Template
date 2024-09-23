@@ -63,7 +63,7 @@ extern UART_HandleTypeDef uart_handle;
 #define UARTx_HWCONTROL           UART_HWCONTROL_NONE
 
 //  <e> 发送DMA
-#define UARTx_USE_DMA_TX          1
+#define UARTx_USE_DMA_TX          0
 
 #if (UARTx_USE_DMA_TX == 1)
 //  <o> 发送缓冲区大小

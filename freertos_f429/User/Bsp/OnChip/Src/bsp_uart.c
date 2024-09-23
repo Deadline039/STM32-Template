@@ -73,7 +73,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart) {
 
     if (huart->Instance == UARTx) {
         UARTx_CLK_ENABLE();
-        gpio_init_struct.Alternate = GPIO_AF7_USART1;
+        gpio_init_struct.Alternate = UARTx_GPIO_AF;
 
         if (huart->Init.Mode & UART_MODE_TX) {
             UARTx_TX_GPIO_ENABLE();

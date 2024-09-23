@@ -19,6 +19,7 @@ extern UART_HandleTypeDef uart_handle;
 
 #define UARTx                     USART1
 #define UARTx_CLK_ENABLE()        __HAL_RCC_USART1_CLK_ENABLE()
+#define UARTx_GPIO_AF             GPIO_AF7_USART1
 #define UARTx_IRQn                USART1_IRQn
 #define UARTx_IRQHandler          USART1_IRQHandler
 
@@ -65,7 +66,7 @@ extern UART_HandleTypeDef uart_handle;
 #define UARTx_HWCONTROL           UART_HWCONTROL_NONE
 
 //  <e> 发送DMA
-#define UARTx_USE_DMA_TX          1
+#define UARTx_USE_DMA_TX          0
 
 #if (UARTx_USE_DMA_TX == 1)
 //  <o> 发送缓冲区大小

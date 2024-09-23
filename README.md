@@ -110,8 +110,6 @@ DMA, GPIO, PWR, RCC, UART
 
 <img src="./assets/add_file.png" width="350"/>
 
-注意:两个Target的编译参数, 包含目录, 编译的文件不会同步, 如果修改了上述内容需要**两个位置同时修改**.
-
 ## 编译参数
 
 编译器使用ARM Compiler 6.22, 使用MicroLib, LTO, C11/C++11标准, O0优化.Clang的语法检查非常严格, 因此关闭下面的警告:
