@@ -23,4 +23,4 @@ void delay_us(uint32_t us);
 }
 #endif /* __cplusplus */
 
-#endif /* __DELAY_H */
+#endif /* __CORE_DELAY_H */

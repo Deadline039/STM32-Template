@@ -59,7 +59,7 @@ extern UART_HandleTypeDef uart_handle;
 #define UARTx_BAND_RATE           115200
 
 //  <o UARTx_HWCONTROL> 串口硬件流控
-//      <UUART_HWCONTROL_NONE=>无
+//      <UART_HWCONTROL_NONE=>无
 //      <UART_HWCONTROL_RTS=>RTS
 //      <UART_HWCONTROL_CTS=>CTS
 //      <UART_HWCONTROL_RTS_CTS=>RTS+CTS
@@ -129,16 +129,17 @@ int uart_printf(UART_HandleTypeDef *huart, const char *__format, ...);
 int uart_scanf(UART_HandleTypeDef *huart, const char *__format, ...);
 
 #if (UARTx_USE_DMA_TX == 1)
-uint32_t uart_dmatx_write(const void *data, size_t len);
-uint32_t uart_dmatx_send(void);
+uint32_t uart_dmatx_write(UART_HandleTypeDef *huart, const void *data,
+                          size_t len);
+uint32_t uart_dmatx_send(UART_HandleTypeDef *huart);
 #endif /* UARTx_USE_DMA_TX == 1 */
 
 #if (UARTx_USE_DMA_RX == 1)
-uint32_t uart_dmarx_read(void *buf, size_t buf_size);
+uint32_t uart_dmarx_read(UART_HandleTypeDef *huart, void *buf, size_t buf_size);
 #endif /* UARTx_USE_DMA_RX == 1 */
 
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
 
-#endif /* __UART_H */
+#endif /* __BSP_UART_H */

@@ -19,9 +19,9 @@
     ],
     "settings": {
         "files.associations": {
+            "*.embeddedhtml": "html",
             "*.s": "arm",
             "*.cpp": "cpp",
-            "*.embeddedhtml": "html",
             "retarget_io.h": "c",
             "stm32f1xx_hal.h": "c",
             "bsp.h": "c",
@@ -33,7 +33,8 @@
             "core_delay.h": "c",
             "assert.h": "c",
             "string.h": "c",
-            "stdarg.h": "c"
+            "stdarg.h": "c",
+            "bsp_core.h": "c"
         }
     }
 }

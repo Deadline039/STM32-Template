@@ -92,11 +92,17 @@ void uart_dmatx_clear_tc_flag(void) {
 /**
  * @brief 向串口发送缓冲区中写入数据
  *
+ * @param huart 串口句柄
  * @param data 数据
  * @param len 数据长度
  * @return 成功写入的长度
  */
-uint32_t uart_dmatx_write(const void *data, size_t len) {
+uint32_t uart_dmatx_write(UART_HandleTypeDef *huart, const void *data,
+                          size_t len) {
+    if (huart->Instance != UARTx) {
+        return 0;
+    }
+
     if ((data == NULL) || (len == 0)) {
         return 0;
     }
@@ -119,10 +125,15 @@ uint32_t uart_dmatx_write(const void *data, size_t len) {
 /**
  * @brief 把FIFO中的数据通过DMA发送
  *
+ * @param huart 串口句柄
  * @return 成功发送的长度
  * @note 先使用`uart_dmatx_write`写入数据
  */
-uint32_t uart_dmatx_send(void) {
+uint32_t uart_dmatx_send(UART_HandleTypeDef *huart) {
+    if (huart->Instance != UARTx) {
+        return 0;
+    }
+
     /* 未发送完毕 */
     if (!uart_tx_buf.tc_flag) {
         return 0;
@@ -319,11 +330,17 @@ void uart_dmarx_done_callback(void) {
 /**
  * @brief 从接收fifo中读取数据
  *
+ * @param huart 串口句柄
  * @param buf 接收数据缓冲区
  * @param buf_size 缓冲区长度
  * @return 缓冲区剩余长度
  */
-uint32_t uart_dmarx_read(void *buf, size_t buf_size) {
+uint32_t uart_dmarx_read(UART_HandleTypeDef *huart, void *buf,
+                         size_t buf_size) {
+    if (huart->Instance != UARTx) {
+        return 0;
+    }
+
     return ring_fifo_read(uart_rx_fifo.rx_fifo, buf, buf_size);
 }
 

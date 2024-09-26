@@ -173,7 +173,7 @@ int uart_scanf(UART_HandleTypeDef *huart, const char *__format, ...) {
 
 #if (UARTx_USE_DMA_RX == 1)
     while (str_len == 0) {
-        str_len = uart_dmarx_read(uart_buffer, sizeof(uart_buffer));
+        str_len = uart_dmarx_read(huart, uart_buffer, sizeof(uart_buffer));
         delay_ms(1);
     }
 #else  /* UARTx_USE_DMA_RX == 1 */

@@ -173,7 +173,7 @@ int uart_scanf(UART_HandleTypeDef *huart, const char *__format, ...) {
 
 #if (UARTx_USE_DMA_RX == 1)
     while (str_len == 0) {
-        str_len = uart_dmarx_read(uart_buffer, sizeof(uart_buffer));
+        str_len = uart_dmarx_read(huart, uart_buffer, sizeof(uart_buffer));
         delay_ms(1);
     }
 #else  /* UARTx_USE_DMA_RX == 1 */
@@ -209,8 +209,6 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
  * @brief 串口接收完成回调
  *
  * @param huart 串口句柄
- * @note 如果要多个串口使用接收回调, 强烈建议使用函数指针回调
- *       否则该函数结构会变得非常复杂
  */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     if ((huart->Instance == UARTx) && (huart->hdmarx != NULL)) {
