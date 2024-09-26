@@ -146,7 +146,7 @@ int uart_printf(UART_HandleTypeDef *huart, const char *__format, ...) {
 
     len = strlen(uart_buffer);
 
-    if (uart_handle.hdmatx == NULL) {
+    if (huart->hdmatx == NULL) {
         HAL_UART_Transmit(huart, (uint8_t *)uart_buffer, len, 1000);
     } else {
         HAL_UART_Transmit_DMA(huart, (uint8_t *)uart_buffer, len);
