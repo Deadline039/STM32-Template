@@ -1,0 +1,43 @@
+{
+    "folders": [
+        {
+            "name": "bare_f1xx",
+            "path": "bare_f1xx"
+        },
+        {
+            "name": "bare_f4xx",
+            "path": "bare_f4xx"
+        },
+        {
+            "name": "freertos_f1xx",
+            "path": "freertos_f1xx"
+        },
+        {
+            "name": "freertos_f4xx",
+            "path": "freertos_f4xx"
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "*.s": "arm",
+            "*.cpp": "cpp",
+            "*.embeddedhtml": "html",
+            "retarget_io.h": "c",
+            "stm32f1xx_hal.h": "c",
+            "bsp.h": "c",
+            "uart.h": "c",
+            "led.h": "c",
+            "delay.h": "c",
+            "ring_fifo.h": "c",
+            "bsp_uart.h": "c",
+            "core_delay.h": "c",
+            "assert.h": "c",
+            "string.h": "c",
+            "stdarg.h": "c",
+            "bsp_core.h": "c",
+            "includes.h": "c",
+            "stdio.h": "c",
+            "csp_config.h": "c"
+        }
+    }
+}
