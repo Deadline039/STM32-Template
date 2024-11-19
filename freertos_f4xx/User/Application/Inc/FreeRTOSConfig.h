@@ -162,7 +162,7 @@ extern uint32_t SystemCoreClock;
 
 // </h>
 
-// <e>运行时间和任务状态统计相关定义
+// <h>运行时间和任务状态统计相关定义
 // =============================================================================
 
 //  <q>启用任务运行时间统计功能
@@ -185,7 +185,7 @@ extern uint32_t FreeRTOSRunTimeTicks;
 //  <i> 默认: 0
 #define configUSE_STATS_FORMATTING_FUNCTIONS 1
 
-// </e>
+// </h>
 
 // <h>协程相关定义
 
