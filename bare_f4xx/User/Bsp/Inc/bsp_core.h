@@ -13,6 +13,8 @@
 extern "C" {
 #endif /* __cplusplus */
 
+#include "CSP_Config.h"
+
 /* No problem at configuration system clock. */
 #define SYSTEM_CORE_CLK_OK         0
 /* High speed clock configuration failed. */

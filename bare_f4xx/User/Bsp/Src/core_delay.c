@@ -6,8 +6,6 @@
  * @date    2024-08-05
  */
 
-#include "CSP_Config.h"
-
 #include "core_delay.h"
 
 static uint32_t g_fac_us = 0;

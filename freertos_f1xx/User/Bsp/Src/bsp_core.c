@@ -6,8 +6,6 @@
  * @date    2024-07-29
  */
 
-#include "CSP_Config.h"
-
 #include "bsp_core.h"
 
 /**

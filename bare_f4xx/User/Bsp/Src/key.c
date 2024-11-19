@@ -6,10 +6,9 @@
  * @date    2023-10-20
  */
 
-#include "CSP_Config.h"
-#include "core_delay.h"
-
 #include "key.h"
+
+#include "core_delay.h"
 
 /**
  * @brief Keys initialization.

@@ -13,6 +13,8 @@
 extern "C" {
 #endif /* __cplusplus */
 
+#include "CSP_Config.h"
+
 #define LED0_GPIO_PORT A
 #define LED0_GPIO_PIN  GPIO_PIN_8
 
