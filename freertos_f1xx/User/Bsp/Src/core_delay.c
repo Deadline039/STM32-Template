@@ -8,6 +8,10 @@
 
 #include "core_delay.h"
 
+#include "FreeRTOS.h"
+#include "task.h"
+
+
 static uint32_t g_fac_us = 0;
 
 /**
@@ -16,16 +20,36 @@ static uint32_t g_fac_us = 0;
  * @param sysclk System clock frequency(MHz)
  */
 void delay_init(uint16_t sysclk) {
-    g_fac_us = sysclk;
+    uint32_t reload;
+
+    SysTick->CTRL = 0;
+
+    HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK_DIV8);
+
+    g_fac_us = sysclk / 8;
+
+    reload = sysclk / 8;
+
+    reload *= 1000000 / configTICK_RATE_HZ;
+    SysTick->CTRL |= 1 << 1;
+    SysTick->LOAD = reload;
+    SysTick->CTRL |= 1 << 0;
 }
 
 /**
  * @brief Delay n milliseconds.
  *
  * @param ms The time to delay.
+ * @note If RTOS not running, then using task delay, else using block
+ *       delay.
+ * @warning Don't use this function in interrupt!
  */
 void delay_ms(uint32_t ms) {
-    delay_us((uint32_t)(ms * 1000));
+    if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED) {
+        vTaskDelay(ms);
+    } else {
+        delay_us((uint32_t)(ms * 1000));
+    }
 }
 
 /**
