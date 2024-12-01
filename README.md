@@ -1,6 +1,6 @@
 # STM32 新建工程模板文件
 
-F1 基于正点原子 MiniSTM32 制作。F4 基于正点原子阿波罗板制作。
+F1 基于正点原子 MiniSTM32 制作，外部晶振 8 MHz。F4 基于正点原子阿波罗板制作，外部晶振 25 MHz。
 
 程序下载后可以看到跑马灯，串口 1 每隔 1 秒发送`xxx Template, Runnting Time: xxx ms. `按下按键在串口 1 发送`xxx Pressed`.
 
