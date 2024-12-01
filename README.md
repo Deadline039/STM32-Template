@@ -20,7 +20,7 @@ CSP 层配置`/Drivers/CSP/CSP_Config.h`, FreeRTOS 配置`/User/Application/Inc/
 
 ![](./assets/config_wizard.png)
 
-CSP 层配置文件可以用图形化界面选择开启或者关闭某个外设，以简化外设初始化与使用的配置。
+CSP 层配置文件可以用图形化界面选择开启或者关闭某个外设，以简化外设初始化配置与使用。
 
 # 使用方法
 

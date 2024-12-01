@@ -120,7 +120,7 @@ extern uint32_t SystemCoreClock;
 #define configSUPPORT_DYNAMIC_ALLOCATION          1
 
 //  <o>堆内存总大小 [byte] <0-65535>
-#define configTOTAL_HEAP_SIZE                     ((size_t)(8 * 1024))
+#define configTOTAL_HEAP_SIZE                     ((size_t)8192)
 
 //  <q>用户手动分配FreeRTOS内存堆
 //  <i> 默认: 0

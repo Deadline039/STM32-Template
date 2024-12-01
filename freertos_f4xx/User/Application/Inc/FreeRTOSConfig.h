@@ -120,7 +120,7 @@ extern uint32_t SystemCoreClock;
 #define configSUPPORT_DYNAMIC_ALLOCATION          1
 
 //  <o>堆内存总大小 [byte] <0-65535>
-#define configTOTAL_HEAP_SIZE                     ((size_t)(8 * 1024))
+#define configTOTAL_HEAP_SIZE                     ((size_t)8192)
 
 //  <q>用户手动分配FreeRTOS内存堆
 //  <i> 默认: 0
@@ -260,7 +260,7 @@ extern uint32_t FreeRTOSRunTimeTicks;
     vAssertCalled(__FILE__, __LINE__)
 
 /* 重定向FreeRTOS中断服务相关函数到系统中断 */
-#define xPortPendSVHandler  PendSV_Handler
-#define vPortSVCHandler     SVC_Handler
+#define xPortPendSVHandler PendSV_Handler
+#define vPortSVCHandler    SVC_Handler
 
 #endif /* __FREERTOS_CONFIG_H */

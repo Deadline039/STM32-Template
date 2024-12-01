@@ -76,6 +76,9 @@
               },
               {
                 "path": "Drivers/STM32_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c"
+              },
+              {
+                "path": "Drivers/STM32_HAL_Driver/Src/stm32f4xx_hal_i2c.c"
               }
             ],
             "folders": []
@@ -104,6 +107,9 @@
             "files": [
               {
                 "path": "Drivers/CSP/UART_STM32F4xx.c"
+              },
+              {
+                "path": "Drivers/CSP/I2C_STM32F4xx.c"
               }
             ],
             "folders": []
@@ -271,7 +277,7 @@
           "afterBuildTasks": [],
           "global": {
             "output-debug-info": "enable",
-             "use-microLIB": false
+            "use-microLIB": false
           },
           "c/cpp-compiler": {
             "optimization": "level-0",
