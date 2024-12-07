@@ -48,7 +48,9 @@ void delay_ms(uint32_t ms) {
     if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED) {
         vTaskDelay(ms);
     } else {
-        delay_us((uint32_t)(ms * 1000));
+        for (uint32_t i = 0; i < ms; ++i) {
+            delay_us(1000);
+        }
     }
 }
 

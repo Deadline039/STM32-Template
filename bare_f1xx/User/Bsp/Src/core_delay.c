@@ -25,7 +25,9 @@ void delay_init(uint16_t sysclk) {
  * @param ms The time to delay.
  */
 void delay_ms(uint32_t ms) {
-    delay_us((uint32_t)(ms * 1000));
+    for (uint32_t i = 0; i < ms; ++i) {
+        delay_us(1000);
+    }
 }
 
 /**
