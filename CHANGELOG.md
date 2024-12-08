@@ -1,5 +1,27 @@
 # Change Log
 
+### [v3.1.0] 2024-12-8
+
+***Fix***
+
+- STM32F1 CSP Bug:
+
+  - SPI IO 错误
+
+  - I2C IO 错误
+
+- STM32F4 CSP Bug:
+
+  - CAN 函数名错误
+
+***Note***
+
+  - 添加 STM32G4 模板
+
+  - 修改目录结构，将 Bsp 移动到 Drivers 中，移除 Inc, Src 文件夹，采用相对路径定位头文件。
+
+  - 修改 CSP 头文件路径
+
 ### [v3.0.1] 2024-11-30
 
 ***Fix***

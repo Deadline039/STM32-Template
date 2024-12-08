@@ -14,8 +14,8 @@
 #define __VERSION_H
 
 #define VERSION_MAJOR 3 /* Major Version Number */
-#define VERSION_MINOR 0 /* Minjor Version Number */
-#define VERSION_PATCH 1 /* Patch Number */
+#define VERSION_MINOR 1 /* Minjor Version Number */
+#define VERSION_PATCH 0 /* Patch Number */
 
 /* The information about this version, such as bug fix, new feature */
 #define VERSION_INFO  ""
