@@ -11,7 +11,6 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-
 static uint32_t g_fac_us = 0;
 
 /**
