@@ -45,7 +45,7 @@ int main(void) {
         }
 
         if (count == 100) {
-            printf("STM32F429 bare project template. Running time: %d "
+            printf("STM32F4xx bare project template. Running time: %d "
                    "ms. \r\n",
                    HAL_GetTick());
             LED0_TOGGLE();

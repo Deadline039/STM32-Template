@@ -1,6 +1,12 @@
 # STM32 新建工程模板文件
 
-F1 基于正点原子 MiniSTM32 制作，外部晶振 8 MHz。F4 基于正点原子阿波罗板制作，外部晶振 25 MHz。
+F1 基于正点原子 MiniSTM32 (STM32F103RCT6) 制作，外部晶振 8 MHz，工作频率 72 MHz。
+
+F4 基于正点原子阿波罗 (STM32F429IGT6) 制作，外部晶振 25 MHz，工作频率 180 MHz。
+
+G4 基于 STM32G474VET6 制作，外部晶振 25 MHz，工作频率 170 MHz。
+
+STM32G474 的开发板是自己制作的兼容正点原子阿波罗底板的核心板，您可以从 Release 中下载该 PCB。
 
 程序下载后可以看到跑马灯，串口 1 每隔 1 秒发送`xxx Template, Runnting Time: xxx ms. `按下按键在串口 1 发送`xxx Pressed`.
 
@@ -12,7 +18,7 @@ F1 基于正点原子 MiniSTM32 制作，外部晶振 8 MHz。F4 基于正点原
 
 Bsp 层添加了按键，LED, 串口和 C 库系统 IO 重定义。默认只启用了串口 1, 没有使用 DMA.
 
-按键，LED 按照正点原子开发板编写，如需更改，自行到`User/Bsp/Inc/led.h`和`User/Bsp/Inc/key.h`中更改相应的 IO.
+按键，LED 按照正点原子开发板编写，如需更改，自行到`Drivers/Bsp/led/led.h`和`Drivers/Bsp/key/key.h`中更改相应的 IO.
 
 在`User/Application/Inc/version.h`中定义了模板版本号，可以通过其中预定义的一些函数来获取。
 
@@ -21,6 +27,8 @@ CSP 层配置`/Drivers/CSP/CSP_Config.h`, FreeRTOS 配置`/User/Application/Inc/
 ![](./assets/config_wizard.png)
 
 CSP 层配置文件可以用图形化界面选择开启或者关闭某个外设，以简化外设初始化配置与使用。
+
+默认堆栈大小均为 0x1000。
 
 # 使用方法
 
@@ -54,7 +62,7 @@ CSP 层配置文件可以用图形化界面选择开启或者关闭某个外设�
 
 # 更换同一家族芯片型号
 
-F1xx 模板基于 STM32F103RCT6; F4xx 模板基于 STM32F429IGT6. 模板并不是只适用于这两个型号，而是适用于同一家族的所有型号，可以用以下步骤来更换芯片（以 STM32F429IG 换 STM32F407ZE 为例）:
+F1xx 模板基于 STM32F103RCT6; F4xx 模板基于 STM32F429IGT6; G4xx 模板基于 STM32G474VET6. 模板并不是只适用于这两个型号，而是适用于同一家族的所有型号，可以用以下步骤来更换芯片（以 STM32F429IG 换 STM32F407ZE 为例）:
 
 1. 在 EIDE 中修改芯片型号。
    
@@ -121,6 +129,7 @@ DMA, GPIO, PWR, RCC, UART
 ```
 
 如果使用其他外设，自行添加即可。
+
 ## 编译参数
 
 编译器使用 ARM Compiler 6.22, 使用 MicroLib, LTO, C11/C++11 标准，O0 优化。Clang 的语法检查非常严格，因此关闭下面的警告：
@@ -162,12 +171,12 @@ DMA, GPIO, PWR, RCC, UART
 ├─build                        编译生成目录
 ├─Drivers                      底层驱动
 │  ├─CMSIS                     CMSIS 驱动，包括 Startup 和外设定义
-│  └─STM32_HAL_Driver          HAL 库
+│  ├─STM32_HAL_Driver          HAL 库
+│  ├─Bsp                      板层驱动文件
 │  └─CSP                       芯片驱动支持包
 ├─Middlewares                  中间件，存放如 FreeRTOS, LVGL 等组件的文件
 └─User                         用户提供的源文件
     ├─Application              Application 层文件
-    ├─Bsp                      板层驱动文件
     └─Utils                    常用工具，例如队列，缓冲区填充等。独立于芯片
 ```
 
