@@ -9,12 +9,20 @@
             "path": "bare_f4xx"
         },
         {
+            "name": "bare_g4xx",
+            "path": "bare_g4xx"
+        },
+        {
             "name": "freertos_f1xx",
             "path": "freertos_f1xx"
         },
         {
             "name": "freertos_f4xx",
             "path": "freertos_f4xx"
+        },
+        {
+            "name": "freertos_g4xx",
+            "path": "freertos_g4xx"
         }
     ],
     "settings": {
@@ -38,7 +46,8 @@
             "includes.h": "c",
             "stdio.h": "c",
             "csp_config.h": "c",
-            "uart_stm32f4xx.h": "c"
+            "uart_stm32f4xx.h": "c",
+            "uart_stm32g4xx.h": "c"
         },
         "cortex-debug.variableUseNaturalFormat": false
     }
