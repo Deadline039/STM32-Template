@@ -42,7 +42,7 @@ static void __io_putchar_uart(USART_TypeDef *uart, char ch) {
     while ((uart->ISR & UART_FLAG_TC) == 0)
         ;
 
-    uart->TDR = (uint8_t)ch;
+    uart->TDR = (uint32_t)ch;
 }
 
 /**
@@ -54,7 +54,7 @@ static void __io_putchar_uart(USART_TypeDef *uart, char ch) {
 static char __io_getchar_uart(USART_TypeDef *uart) {
     while ((uart->ISR & UART_FLAG_RXNE) == RESET)
         ;
-    return (int)uart->RDR;
+    return (char)uart->RDR;
 }
 
 #if defined(__ARMCC_VERSION) /* Compiler */
