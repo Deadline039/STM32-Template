@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "Debug: JLINK",
+            "servertype": "jlink",
+            "interface": "swd",
+            "executable": "build/Debug/freertos_f103.elf",
+            "runToEntryPoint": "main",
+            "device": "STM32F103RC",
+            "svdFile": ".pack/Keil/STM32F1xx_DFP.2.3.0/SVD/STM32F103xx.svd",
+            "serverArgs": [
+                "-speed",
+                "50000"
+            ]
+        }
+    ]
+}

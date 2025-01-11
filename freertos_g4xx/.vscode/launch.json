@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "Debug: JLINK",
+            "servertype": "jlink",
+            "interface": "swd",
+            "executable": "build/Debug/bare_g4xx.elf",
+            "runToEntryPoint": "main",
+            "device": "STM32G474VE",
+            "svdFile": ".pack/Keil/STM32G4xx_DFP.1.6.0/CMSIS/SVD/STM32G474.svd",
+            "serverArgs": [
+                "-speed",
+                "50000"
+            ],
+        }
+    ]
+}
