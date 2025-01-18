@@ -13,7 +13,7 @@
 extern "C" {
 #endif /* __cplusplus */
 
-#include "CSP_Config.h"
+#include <CSP_Config.h>
 
 #define KEY0_GPIO_PORT C
 #define KEY0_GPIO_PIN  GPIO_PIN_3

@@ -13,7 +13,7 @@
 extern "C" {
 #endif /* __cplusplus */
 
-#include "CSP_Config.h"
+#include <CSP_Config.h>
 
 #include "./core/bsp_core.h"
 #include "./core/core_delay.h"

@@ -6,7 +6,7 @@
  * @date    2023-10-20
  */
 
-#include "CSP_Config.h"
+#include <CSP_Config.h>
 
 #include "led.h"
 

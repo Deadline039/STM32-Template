@@ -13,7 +13,7 @@
 extern "C" {
 #endif /* __cplusplus */
 
-#include "CSP_Config.h"
+#include <CSP_Config.h>
 
 void delay_init(uint16_t sysclk);
 void delay_ms(uint32_t ms);
