@@ -1,5 +1,13 @@
 # Change Log
 
+### [v3.1.2] 2025-2-5
+
+***Note***
+
+- 使用 python 解析 STM32F4 datasheet 来生成 CSP 层文件
+
+- 更新 CSP 内存管理宏定义
+
 ### [v3.1.1] 2025-1-18
 
 ***Note***
