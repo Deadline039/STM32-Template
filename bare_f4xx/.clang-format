@@ -101,3 +101,15 @@ IndentCaseLabels: true
 
 # if, while, for单行自动加括号
 InsertBraces: true
+
+# 在尾随的评论前添加的空格数(只适用于//)
+SpacesBeforeTrailingComments: 1
+
+# 允许重新排版注释
+ReflowComments: false
+
+# 允许排序#include
+SortIncludes: false
+
+# 允许排序 using 声明
+SortUsingDeclarations: false
