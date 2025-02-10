@@ -1,39 +1,3 @@
-[submodule "bare_f429/Drivers/STM32_HAL_Driver"]
-	path = bare_f429/Drivers/STM32_HAL_Driver
-	url = https://github.com/STMicroelectronics/stm32f4xx-hal-driver.git
-[submodule "bare_f429/Drivers/CMSIS/Device/ST/STM32F4xx"]
-	path = bare_f429/Drivers/CMSIS/Device/ST/STM32F4xx
-	url = https://github.com/STMicroelectronics/cmsis-device-f4.git
-[submodule "freertos_f429/Drivers/STM32_HAL_Driver"]
-	path = freertos_f429/Drivers/STM32_HAL_Driver
-	url = https://github.com/STMicroelectronics/stm32f4xx-hal-driver.git
-[submodule "freertos_f429/Drivers/CMSIS/Device/ST/STM32F4xx"]
-	path = freertos_f429/Drivers/CMSIS/Device/ST/STM32F4xx
-	url = https://github.com/STMicroelectronics/cmsis-device-f4.git
-[submodule "bare_f103/Drivers/STM32_HAL_Driver"]
-	path = bare_f103/Drivers/STM32_HAL_Driver
-	url = https://github.com/STMicroelectronics/stm32f1xx-hal-driver.git
-[submodule "bare_f103/Drivers/CMSIS/Device/ST/STM32F1xx"]
-	path = bare_f103/Drivers/CMSIS/Device/ST/STM32F1xx
-	url = https://github.com/STMicroelectronics/cmsis-device-f1.git
-[submodule "freertos_f103/Drivers/STM32_HAL_Driver"]
-	path = freertos_f103/Drivers/STM32_HAL_Driver
-	url = https://github.com/STMicroelectronics/stm32f1xx-hal-driver.git
-[submodule "freertos_f103/Drivers/CMSIS/Device/ST/STM32F1xx"]
-	path = freertos_f103/Drivers/CMSIS/Device/ST/STM32F1xx
-	url = https://github.com/STMicroelectronics/cmsis-device-f1.git
-[submodule "bare_f103/Drivers/CSP"]
-	path = bare_f103/Drivers/CSP
-	url = https://github.com/Deadline039/STM32F1xx-HAL-CSP.git
-[submodule "freertos_f103/Drivers/CSP"]
-	path = freertos_f103/Drivers/CSP
-	url = https://github.com/Deadline039/STM32F1xx-HAL-CSP.git
-[submodule "bare_f429/Drivers/CSP"]
-	path = bare_f429/Drivers/CSP
-	url = https://github.com/Deadline039/STM32F4xx-HAL-CSP.git
-[submodule "freertos_f429/Drivers/CSP"]
-	path = freertos_f429/Drivers/CSP
-	url = https://github.com/Deadline039/STM32F4xx-HAL-CSP.git
 [submodule "bare_f1xx/Drivers/CSP"]
 	path = bare_f1xx/Drivers/CSP
 	url = https://github.com/Deadline039/STM32F1xx-HAL-CSP.git
