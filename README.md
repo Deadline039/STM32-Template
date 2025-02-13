@@ -6,7 +6,7 @@ F4 基于正点原子阿波罗 (STM32F429IGT6) 制作，外部晶振 25 MHz，�
 
 G4 基于 STM32G474VET6 制作，外部晶振 25 MHz，工作频率 170 MHz。
 
-STM32G474 的开发板是自己制作的兼容正点原子阿波罗底板的核心板，您可以从 Release 中下载该 PCB。
+STM32G474 的开发板是自己制作的兼容正点原子阿波罗底板的核心板，[点击此处下载 PCB](https://github.com/Deadline039/STM32-Template/releases/download/v3.1.0/G474Core.7z)。
 
 程序下载后可以看到跑马灯，串口 1 每隔 1 秒发送`xxx Template, Runnting Time: xxx ms. `按下按键在串口 1 发送`xxx Pressed`.
 
@@ -79,6 +79,24 @@ F1xx 模板基于 STM32F103RCT6; F4xx 模板基于 STM32F429IGT6; G4xx 模板基
    <img src="./assets/modify_device_2.png" width="750" />
 
 3. 修改`bsp_core.c`中的时钟配置（可以用 CubeMX 生成的代码）, 修改不兼容的外设代码，例如不存在的外设。
+
+宏名称通常与文件名是对应的，因此可以通过宏名称来判断文件名。
+
+## 精简芯片文件
+
+模板中包含全家族的芯片文件，为减小体积，可以保留仅需要的文件（以保留 STM32F429IG 为例）：
+
+1. 删除其他芯片头文件：打开`Drivers/CMSIS/Device/ST/STM32Fxxx/Include`下，保留仅当前芯片的头文件以及芯片家族头文件：
+
+   <img src="./assets/delete_device_headers.png" width="450" />
+
+2. 删除其他芯片的启动文件：在`Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/编译器代号`中；ARM Compiler 的编译器代号是`arm`，GNU Toolchain for Arm 的编译器代号是`gcc`，IAR for Arm 的编译器代号是`iar`，如果不需要其他编译器，删除即可。每个编译器下也只保留特定芯片的启动与链接文件（链接文件一般在`linker`下）：
+
+   <img src="./assets/delete_device_startup.png" width="450" />
+
+3. 删除其他芯片的 SVD：SVD 文件是为了调试时可以查看外设寄存器状态的描述文件，通常情况下，芯片外设越多，文件体积越大。在`.pack/Keil/STM32Fxxx_DFP.x.y.z/CMSIS/SVD`中，仅保留当前芯片的 SVD：
+
+   <img src="./assets/delete_device_svd.png" width="450" />
 
 # 调试配置
 
