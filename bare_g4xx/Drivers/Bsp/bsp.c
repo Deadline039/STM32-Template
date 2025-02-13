@@ -32,7 +32,7 @@ void bsp_init(void) {
  * @param line Line.
  */
 void assert_failed(uint8_t *file, uint32_t line) {
-    fprintf(stderr, "HAL assert failed. In file: %s, line: %d\r\n", file, line);
+    fprintf(stderr, "HAL assert failed. In file: %s, line: %u\r\n", file, line);
 }
 
 #endif /* USE_FULL_ASSERT */
