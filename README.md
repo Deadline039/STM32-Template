@@ -14,6 +14,8 @@ STM32G474 的开发板是自己制作的兼容正点原子阿波罗底板的核�
 
 感谢@[LuLongXiang](https://github.com/LuLongXiang)绘制的 G474 核心板。
 
+## 使用例程：[https://github.com/Deadline039/STM32-Example](https://github.com/Deadline039/STM32-Example)，电机驱动：[https://github.com/XJU-Hurricane-Team/STM32-Motor-Driver](https://github.com/XJU-Hurricane-Team/STM32-Motor-Driver)
+
 ## [更新日志](./CHANGELOG.md)
 
 # 预设文件
