@@ -12,3 +12,13 @@
 # eide template
 *.ept
 *.eide-template
+
+.DS_Store
+
+# User-specific uVision files
+*.opt
+*.uvopt
+*.uvoptx
+*.uvgui
+*.uvgui.*
+*.uvguix.*
