@@ -26,7 +26,7 @@ Bsp 层添加了按键，LED, 串口和 C 库系统 IO 重定义。默认只启�
 
 在`User/Application/Inc/version.h`中定义了模板版本号，可以通过其中预定义的一些函数来获取。
 
-CSP 层配置`/Drivers/CSP/CSP_Config.h`, FreeRTOS 配置`/User/Application/Inc/FreeRTOSConfig.h`支持 CMSIS Configuration Wizard, 可以使用图形化界面来配置，参照：[CMSIS 头文件配置向导](https://em-ide.com/zh-cn/docs/advance/cmsis_cfg_wizard) [CMSIS 配置向导标记 | Deadline039](https://deadline039.github.io/Embedded/cmsis_config_wizard).
+CSP 层配置`/Drivers/CSP/Config/CSP_Config.h`, FreeRTOS 配置`/User/Application/Inc/FreeRTOSConfig.h`支持 CMSIS Configuration Wizard, 可以使用图形化界面来配置，参照：[CMSIS 头文件配置向导](https://em-ide.com/zh-cn/docs/advance/cmsis_cfg_wizard) [CMSIS 配置向导标记 | Deadline039](https://deadline039.github.io/Embedded/cmsis_config_wizard).
 
 ![](./assets/config_wizard.png)
 
