@@ -107,7 +107,7 @@ void task3(void *pvParameters) {
             } break;
 
             case KEY2_PRESS: {
-                printf("KEY2 PRessed. \r\n");
+                printf("KEY2 Pressed. \r\n");
             } break;
 
             default: {
