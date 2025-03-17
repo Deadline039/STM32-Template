@@ -253,11 +253,13 @@ extern uint32_t FreeRTOSRunTimeTicks;
     configMAX_SYSCALL_INTERRUPT_PRIORITY
 
 /* 断言 */
-#include <stdio.h>
-#define vAssertCalled(char, int) printf("Error: %s, %d\r\n", char, int)
 #define configASSERT(x)                                                        \
     if ((x) == 0)                                                              \
     vAssertCalled(__FILE__, __LINE__)
+
+#ifdef configASSERT
+extern void vAssertCalled(const char *pcFile, unsigned int ulLine);
+#endif /* configASSERT */
 
 /* 重定向FreeRTOS中断服务相关函数到系统中断 */
 #define xPortPendSVHandler PendSV_Handler

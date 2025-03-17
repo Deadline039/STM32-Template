@@ -117,3 +117,44 @@ void task3(void *pvParameters) {
         vTaskDelay(10);
     }
 }
+
+#ifdef configASSERT
+
+/**
+ * @brief FreeRTOS assert failed function. 
+ * 
+ * @param pcFile File name
+ * @param ulLine File line
+ */
+void vAssertCalled(const char *pcFile, unsigned int ulLine) {
+    fprintf(stderr, "FreeRTOS assert failed. File: %s, line: %d. \n", pcFile,
+            ulLine);
+}
+#endif /* configASSERT */
+
+#if configCHECK_FOR_STACK_OVERFLOW
+
+/**
+ * @brief The application stack overflow hook is called when a stack overflow is detected for a task.
+ *
+ * @param xTask the task that just exceeded its stack boundaries.
+ * @param pcTaskName A character string containing the name of the offending task.
+ */
+void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName) {
+    UNUSED(xTask);
+    fprintf(stderr, "Stack overflow! Taskname: %s. \n", pcTaskName);
+}
+
+#endif /* configCHECK_FOR_STACK_OVERFLOW */
+
+#if configUSE_MALLOC_FAILED_HOOK
+
+/**
+ * @brief This hook function is called when allocation failed.
+ * 
+ */
+void vApplicationMallocFailedHook(void) {
+    fprintf(stderr, "FreeRTOS malloc failed! \n");
+}
+
+#endif /* configUSE_MALLOC_FAILED_HOOK */
