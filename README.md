@@ -6,7 +6,7 @@ F4 基于正点原子阿波罗 (STM32F429IGT6) 制作，外部晶振 25 MHz，�
 
 G4 基于 STM32G474VET6 制作，外部晶振 25 MHz，工作频率 170 MHz。
 
-STM32G474 的开发板是自己制作的兼容正点原子阿波罗底板的核心板，您可以从 Release 中下载该 PCB。
+STM32G474 的开发板是自己制作的兼容正点原子阿波罗底板的核心板，[点击此处下载 PCB](https://github.com/Deadline039/STM32-Template/releases/download/v3.1.0/G474Core.7z)。
 
 程序下载后可以看到跑马灯，串口 1 每隔 1 秒发送`xxx Template, Runnting Time: xxx ms. `按下按键在串口 1 发送`xxx Pressed`.
 
@@ -197,7 +197,7 @@ DMA, GPIO, PWR, RCC, UART
 ├─Drivers                      底层驱动
 │  ├─CMSIS                     CMSIS 驱动，包括 Startup 和外设定义
 │  ├─STM32_HAL_Driver          HAL 库
-│  ├─Bsp                      板层驱动文件
+│  ├─Bsp                       板层驱动文件
 │  └─CSP                       芯片驱动支持包
 ├─Middlewares                  中间件，存放如 FreeRTOS, LVGL 等组件的文件
 └─User                         用户提供的源文件
