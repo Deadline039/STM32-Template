@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "Debug: JLINK",
+            "servertype": "jlink",
+            "interface": "swd",
+            "executable": "build/Debug/bare_h7xx.elf",
+            "runToEntryPoint": "main",
+            "device": "STM32H743II",
+            "svdFile": ".pack/Keil/STM32H7xx_DFP.3.3.1/CMSIS/SVD/STM32H743.svd"
+        },
+    ]
+}
