@@ -11,6 +11,10 @@
         {
             "name": "bare_g4xx",
             "path": "bare_g4xx"
+        },        
+        {
+            "name": "bare_h7xx",
+            "path": "bare_h7xx"
         },
         {
             "name": "freertos_f1xx",
@@ -23,6 +27,10 @@
         {
             "name": "freertos_g4xx",
             "path": "freertos_g4xx"
+        },
+        {
+            "name": "freertos_h7xx",
+            "path": "freertos_h7xx"
         }
     ],
     "settings": {

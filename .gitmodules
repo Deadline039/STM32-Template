@@ -16,3 +16,9 @@
 [submodule "freertos_g4xx/Drivers/CSP"]
 	path = freertos_g4xx/Drivers/CSP
 	url = https://github.com/Deadline039/STM32G4xx-HAL-CSP.git
+[submodule "bare_h7xx/Drivers/CSP"]
+	path = bare_h7xx/Drivers/CSP
+	url = https://github.com/Deadline039/STM32H7xx-HAL-CSP.git
+[submodule "freertos_h7xx/Drivers/CSP"]
+	path = freertos_h7xx/Drivers/CSP
+	url = https://github.com/Deadline039/STM32H7xx-HAL-CSP.git
