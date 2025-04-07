@@ -435,6 +435,8 @@ extern "C" {
 #define USE_HAL_PCD_REGISTER_CALLBACKS       0
 //  <q> 启用 QSPI (Quad-SPI Flash memory) 中断注册回调函数
 #define USE_HAL_QSPI_REGISTER_CALLBACKS      0
+//  <q> 启用 RAMECC (RAM ECC monitoring)  中断注册回调函数ß
+#define USE_HAL_RAMECC_REGISTER_CALLBACKS    0
 //  <q> 启用 RNG (Random number generator) 中断注册回调函数
 #define USE_HAL_RNG_REGISTER_CALLBACKS       0
 //  <q> 启用 RTC (Real-time clock) 中断注册回调函数
