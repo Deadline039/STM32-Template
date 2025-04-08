@@ -73,7 +73,7 @@ extern "C" {
 #define HAL_DFSDM_MODULE_ENABLED
 // </c>
 
-// <c> 启用 DMA (Digital filter sigma delta modulator)
+// <c> 启用 DMA (Direct memory access)
 #define HAL_DMA_MODULE_ENABLED
 // </c>
 
@@ -363,6 +363,8 @@ extern "C" {
 
 // </h>
 
+/* ########################## Register Callbacks selection ############################## */
+
 // <h> 中断回调配置
 
 //  <q> 启用 ADC (Analog-to-digital convert) 中断注册回调函数
@@ -478,9 +480,9 @@ extern "C" {
 #define ETH_RX_DESC_CNT                      4 /* number of Ethernet Rx DMA descriptors */
 
 // <o> MAC 地址 0
-#define ETH_MAC_ADDR0                        0x02
+#define ETH_MAC_ADDR0                        0x02UL
 // <o> MAC 地址 1
-#define ETH_MAC_ADDR1                        0x44UL
+#define ETH_MAC_ADDR1                        0x00UL
 // <o> MAC 地址 2
 #define ETH_MAC_ADDR2                        0x00UL
 // <o> MAC 地址 3

@@ -16,203 +16,422 @@
   * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
-  */ 
+  */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM32F4xx_HAL_CONF_H
 #define __STM32F4xx_HAL_CONF_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+
 /* ########################## Module Selection ############################## */
-/**
-  * @brief This is the list of modules to be used in the HAL driver 
-  */
-#define HAL_MODULE_ENABLED  
-#define HAL_ADC_MODULE_ENABLED
-#define HAL_CAN_MODULE_ENABLED
-// #define HAL_CAN_LEGACY_MODULE_ENABLED
-#define HAL_CRC_MODULE_ENABLED
-// #define HAL_CEC_MODULE_ENABLED
-// #define HAL_CRYP_MODULE_ENABLED
-#define HAL_DAC_MODULE_ENABLED
-// #define HAL_DCMI_MODULE_ENABLED
-#define HAL_DMA_MODULE_ENABLED
-// #define HAL_DMA2D_MODULE_ENABLED
-// #define HAL_ETH_MODULE_ENABLED
-#define HAL_FLASH_MODULE_ENABLED
-// #define HAL_NAND_MODULE_ENABLED
-// #define HAL_NOR_MODULE_ENABLED
-// #define HAL_PCCARD_MODULE_ENABLED
-#define HAL_SRAM_MODULE_ENABLED
-// #define HAL_SDRAM_MODULE_ENABLED
-// #define HAL_HASH_MODULE_ENABLED
-#define HAL_GPIO_MODULE_ENABLED
-#define HAL_EXTI_MODULE_ENABLED
-#define HAL_I2C_MODULE_ENABLED
-// #define HAL_SMBUS_MODULE_ENABLED
-#define HAL_I2S_MODULE_ENABLED
-#define HAL_IWDG_MODULE_ENABLED
-// #define HAL_LTDC_MODULE_ENABLED
-// #define HAL_DSI_MODULE_ENABLED
-#define HAL_PWR_MODULE_ENABLED
-// #define HAL_QSPI_MODULE_ENABLED
-#define HAL_RCC_MODULE_ENABLED
-// #define HAL_RNG_MODULE_ENABLED
-#define HAL_RTC_MODULE_ENABLED
-// #define HAL_SAI_MODULE_ENABLED
-#define HAL_SD_MODULE_ENABLED
-#define HAL_SPI_MODULE_ENABLED
-#define HAL_TIM_MODULE_ENABLED
-#define HAL_UART_MODULE_ENABLED
-#define HAL_USART_MODULE_ENABLED
-// #define HAL_IRDA_MODULE_ENABLED
-// #define HAL_SMARTCARD_MODULE_ENABLED
-#define HAL_WWDG_MODULE_ENABLED
+
+#define HAL_MODULE_ENABLED
 #define HAL_CORTEX_MODULE_ENABLED
-// #define HAL_PCD_MODULE_ENABLED
-// #define HAL_HCD_MODULE_ENABLED
-// #define HAL_FMPI2C_MODULE_ENABLED
-// #define HAL_FMPSMBUS_MODULE_ENABLED
-// #define HAL_SPDIFRX_MODULE_ENABLED
-// #define HAL_DFSDM_MODULE_ENABLED
-// #define HAL_LPTIM_MODULE_ENABLED
-// #define HAL_MMC_MODULE_ENABLED
+
+// <h> HAL 库配置选择
+
+// <c> 启用 ADC (Analog-to-digital convert)
+#define HAL_ADC_MODULE_ENABLED
+// </c>
+
+// <c> 启用 CAN (Controller area network)
+#define HAL_CAN_MODULE_ENABLED
+// </c>
+
+// <c> 启用旧版 CAN (Controller area network)
+// #define HAL_CAN_LEGACY_MODULE_ENABLED
+// </c>
+
+// <c> 启用 CEC (Consumer electronic controller)
+#define HAL_CEC_MODULE_ENABLED
+// </c>
+
+// <c> 启用 CRC (CRC calculation unit)
+#define HAL_CRC_MODULE_ENABLED
+// </c>
+
+// <c> 启用 CRYP (Cryptographic processor)
+#define HAL_CRYP_MODULE_ENABLED
+// </c>
+
+// <c> 启用 DAC (Digital to analog converter)
+#define HAL_DAC_MODULE_ENABLED
+// </c>
+
+// <c> 启用 DCMI (Digital camera interface)
+#define HAL_DCMI_MODULE_ENABLED
+// </c>
+
+// <c> 启用 DMA (Direct memory access)
+#define HAL_DMA_MODULE_ENABLED
+// </c>
+
+// <c> 启用 DMA2D
+#define HAL_DMA2D_MODULE_ENABLED
+// </c>
+
+// <c> 启用 ETH (Ethernet controller)
+#define HAL_ETH_MODULE_ENABLED
+// </c>
+
+// <c> 启用旧版 ETH (Ethernet controller)
+// #define HAL_ETH_LEGACY_MODULE_ENABLED
+// </c>
+
+// <c> 启用 EXTI (External interrupt/event controller)
+#define HAL_EXTI_MODULE_ENABLED
+// </c>
+
+// <c> 启用 FLASH (Flash memory)
+#define HAL_FLASH_MODULE_ENABLED
+// </c>
+
+// <c> 启用 NAND (NAND Flash memory)
+#define HAL_NAND_MODULE_ENABLED
+// </c>
+
+// <c> 启用 NOR (NOR Flash memory)
+#define HAL_NOR_MODULE_ENABLED
+// </c>
+
+// <c> 启用 PCCARD (PC Card interface)
+#define HAL_PCD_MODULE_ENABLED
+// </c>
+
+// <c> 启用 SRAM (SRAM external memory)
+#define HAL_SRAM_MODULE_ENABLED
+// </c>
+
+// <c> 启用 SDRAM (Synchronous dynamic RAM)
+#define HAL_SDRAM_MODULE_ENABLED
+// </c>
+
+// <c> 启用 GPIO (General purpose I/Os)
+#define HAL_GPIO_MODULE_ENABLED
+// </c>
+
+// <c> 启用 HASH (Hash processor)
+#define HAL_HASH_MODULE_ENABLED
+// </c>
+
+// <c> 启用 I2C (Inter-integrated circuit)
+#define HAL_I2C_MODULE_ENABLED
+// </c>
+
+// <c> 启用 I2S (Inter-integrated sound)
+#define HAL_I2S_MODULE_ENABLED
+// </c>
+
+// <c> 启用 SMBUS (System management bus)
+#define HAL_SMBUS_MODULE_ENABLED
+// </c>
+
+// <c> 启用 IWDG (Independent watchdog)
+#define HAL_IWDG_MODULE_ENABLED
+// </c>
+
+// <c> 启用 LTDC (LCD TFT display controller)
+#define HAL_LTDC_MODULE_ENABLED
+// </c>
+
+// <c> 启用 DSI (Display serial interface)
+#define HAL_DSI_MODULE_ENABLED
+// </c>
+
+// <c> 启用 PWR (Power controller)
+#define HAL_PWR_MODULE_ENABLED
+// </c>
+
+// <c> 启用 QSPI (Quad-SPI Flash memory)
+#define HAL_QSPI_MODULE_ENABLED
+// </c>
+
+// <c> 启用 RCC (Reset and clock controller)
+#define HAL_RCC_MODULE_ENABLED
+// </c>
+
+// <c> 启用 RNG (Random number generator)
+#define HAL_RNG_MODULE_ENABLED
+// </c>
+
+// <c> 启用 RTC (Real-time clock)
+#define HAL_RTC_MODULE_ENABLED
+// </c>
+
+// <c> 启用 SAI (Serial audio interface)
+#define HAL_SAI_MODULE_ENABLED
+// </c>
+
+// <c> 启用 SD (Secure digital)
+#define HAL_SD_MODULE_ENABLED
+// </c>
+
+// <c> 启用 SPI (Serial peripheral interface)
+#define HAL_SPI_MODULE_ENABLED
+// </c>
+
+// <c> 启用 TIM (Advanced-control, general-purpose or basic timer)
+#define HAL_TIM_MODULE_ENABLED
+// </c>
+
+// <c> 启用 UART (Universal asynchronous receiver/transmitter)
+#define HAL_UART_MODULE_ENABLED
+// </c>
+
+// <c> 启用 USART (Universal synchronous receiver/transmitter)
+#define HAL_USART_MODULE_ENABLED
+// </c>
+
+// <c> 启用 IRDA (Infrared data association)
+#define HAL_IRDA_MODULE_ENABLED
+// </c>
+
+// <c> 启用 SMARTCARD (Smartcard IC)
+#define HAL_SMARTCARD_MODULE_ENABLED
+// </c>
+
+// <c> 启用 WWDG (Window watchdog)
+#define HAL_WWDG_MODULE_ENABLED
+// </c>
+
+// <c> 启用 PCD (USB peripheral controller driver)
+#define HAL_PCD_MODULE_ENABLED
+// </c>
+
+// <c> 启用 HCD (USB host controller driver)
+#define HAL_HCD_MODULE_ENABLED
+// </c>
+
+// <c> 启用 FMPI2C (Fast-mode Plus Inter-integrated circuit)
+#define HAL_FMPI2C_MODULE_ENABLED
+// </c>
+
+// <c> 启用 FMPSMBUS (Fast-mode Plus System Management Bus)
+#define HAL_FMPSMBUS_MODULE_ENABLED
+// </c>
+
+// <c> 启用 SPDIFRX (SPDIF-RX Receiver interface)
+#define HAL_SPDIFRX_MODULE_ENABLED
+// </c>
+
+// <c> 启用 DFSDM (Digital filter sigma delta modulator)
+#define HAL_DFSDM_MODULE_ENABLED
+// </c>
+
+// <c> 启用 LPTIM (Low-power timer)
+#define HAL_LPTIM_MODULE_ENABLED
+// </c>
+
+// <c> 启用 MMC (MultiMediaCard)
+#define HAL_MMC_MODULE_ENABLED
+// </c>
+
+// </h>
 
 /* ########################## HSE/HSI Values adaptation ##################### */
-/**
-  * @brief Adjust the value of External High Speed oscillator (HSE) used in your application.
-  *        This value is used by the RCC HAL module to compute the system frequency
-  *        (when HSE is used as system clock source, directly or through the PLL).  
-  */
-#if !defined  (HSE_VALUE) 
-  #define HSE_VALUE              25000000U /*!< Value of the External oscillator in Hz */
+
+// <h> 时钟设置
+#if !defined(HSE_VALUE)
+// <o> HSE (外部高频振荡器) 频率 单位: Hz
+#define HSE_VALUE 25000000UL
 #endif /* HSE_VALUE */
 
-#if !defined  (HSE_STARTUP_TIMEOUT)
-  #define HSE_STARTUP_TIMEOUT    100U      /*!< Time out for HSE start up, in ms */
+#if !defined(HSE_STARTUP_TIMEOUT)
+// <o> HSE 启动超时时间 单位: ms
+#define HSE_STARTUP_TIMEOUT 100UL
 #endif /* HSE_STARTUP_TIMEOUT */
 
-/**
-  * @brief Internal High Speed oscillator (HSI) value.
-  *        This value is used by the RCC HAL module to compute the system frequency
-  *        (when HSI is used as system clock source, directly or through the PLL). 
-  */
-#if !defined  (HSI_VALUE)
-  #define HSI_VALUE              16000000U /*!< Value of the Internal oscillator in Hz */
+#if !defined(HSI_VALUE)
+// <o> HSI (内部高频振荡器) 频率 单位: Hz
+#define HSI_VALUE 16000000UL
 #endif /* HSI_VALUE */
 
-/**
-  * @brief Internal Low Speed oscillator (LSI) value.
-  */
-#if !defined  (LSI_VALUE) 
- #define LSI_VALUE               32000U    /*!< LSI Typical Value in Hz */
-#endif /* LSI_VALUE */                     /*!< Value of the Internal Low Speed oscillator in Hz
-                                                The real value may vary depending on the variations
-                                                in voltage and temperature. */
-/**
-  * @brief External Low Speed oscillator (LSE) value.
-  */
-#if !defined  (LSE_VALUE)
- #define LSE_VALUE               32768U    /*!< Value of the External Low Speed oscillator in Hz */
+#if !defined(LSE_VALUE)
+// <o> LSE (外部低速振荡器) 频率 单位: Hz
+#define LSE_VALUE 32768UL
 #endif /* LSE_VALUE */
 
-#if !defined  (LSE_STARTUP_TIMEOUT)
-  #define LSE_STARTUP_TIMEOUT    5000U     /*!< Time out for LSE start up, in ms */
+#if !defined(LSE_STARTUP_TIMEOUT)
+// <o> LSE 启动超时时间 单位: ms
+#define LSE_STARTUP_TIMEOUT 5000UL
 #endif /* LSE_STARTUP_TIMEOUT */
 
-/**
-  * @brief External clock source for I2S peripheral
-  *        This value is used by the I2S HAL module to compute the I2S clock source 
-  *        frequency, this source is inserted directly through I2S_CKIN pad. 
-  */
-#if !defined  (EXTERNAL_CLOCK_VALUE)
-  #define EXTERNAL_CLOCK_VALUE     12288000U /*!< Value of the External oscillator in Hz*/
+#if !defined(LSI_VALUE)
+// <o> LSI (内部低速振荡器) 典型频率 单位: Hz
+//  <i> LSI 受温度与电压影响很大
+#define LSI_VALUE 32000UL
+#endif /* LSI_VALUE */
+
+#if !defined(LSE_STARTUP_TIMEOUT)
+#define LSE_STARTUP_TIMEOUT 5000U /*!< Time out for LSE start up, in ms */
+#endif                            /* LSE_STARTUP_TIMEOUT */
+
+#if !defined(EXTERNAL_CLOCK_VALUE)
+// <o> 外部 I2S 时钟源频率
+//  <i> I2S 计算时钟源的频率, 通过 I2S_CKIN 输入
+#define EXTERNAL_CLOCK_VALUE 12288000UL
 #endif /* EXTERNAL_CLOCK_VALUE */
+
+// </h>
 
 /* Tip: To avoid modifying this file each time you need to use different HSE,
    ===  you can define the HSE value in your toolchain compiler preprocessor. */
 
 /* ########################### System Configuration ######################### */
-/**
-  * @brief This is the HAL system configuration section
-  */     
-#define  VDD_VALUE                    3300U /*!< Value of VDD in mv */
-#define  TICK_INT_PRIORITY            0x0FU /*!< tick interrupt priority */
-#define  USE_RTOS                     0U
-#define  PREFETCH_ENABLE              1U
-#define  INSTRUCTION_CACHE_ENABLE     1U
-#define  DATA_CACHE_ENABLE            1U
 
-#define  USE_HAL_ADC_REGISTER_CALLBACKS         0U /* ADC register callback disabled       */
-#define  USE_HAL_CAN_REGISTER_CALLBACKS         0U /* CAN register callback disabled       */
-#define  USE_HAL_CEC_REGISTER_CALLBACKS         0U /* CEC register callback disabled       */
-#define  USE_HAL_CRYP_REGISTER_CALLBACKS        0U /* CRYP register callback disabled      */
-#define  USE_HAL_DAC_REGISTER_CALLBACKS         0U /* DAC register callback disabled       */
-#define  USE_HAL_DCMI_REGISTER_CALLBACKS        0U /* DCMI register callback disabled      */
-#define  USE_HAL_DFSDM_REGISTER_CALLBACKS       0U /* DFSDM register callback disabled     */
-#define  USE_HAL_DMA2D_REGISTER_CALLBACKS       0U /* DMA2D register callback disabled     */
-#define  USE_HAL_DSI_REGISTER_CALLBACKS         0U /* DSI register callback disabled       */
-#define  USE_HAL_ETH_REGISTER_CALLBACKS         0U /* ETH register callback disabled       */
-#define  USE_HAL_HASH_REGISTER_CALLBACKS        0U /* HASH register callback disabled      */
-#define  USE_HAL_HCD_REGISTER_CALLBACKS         0U /* HCD register callback disabled       */
-#define  USE_HAL_I2C_REGISTER_CALLBACKS         0U /* I2C register callback disabled       */
-#define  USE_HAL_FMPI2C_REGISTER_CALLBACKS      0U /* FMPI2C register callback disabled    */
-#define  USE_HAL_FMPSMBUS_REGISTER_CALLBACKS    0U /* FMPSMBUS register callback disabled  */
-#define  USE_HAL_I2S_REGISTER_CALLBACKS         0U /* I2S register callback disabled       */
-#define  USE_HAL_IRDA_REGISTER_CALLBACKS        0U /* IRDA register callback disabled      */
-#define  USE_HAL_LPTIM_REGISTER_CALLBACKS       0U /* LPTIM register callback disabled     */
-#define  USE_HAL_LTDC_REGISTER_CALLBACKS        0U /* LTDC register callback disabled      */
-#define  USE_HAL_MMC_REGISTER_CALLBACKS         0U /* MMC register callback disabled       */
-#define  USE_HAL_NAND_REGISTER_CALLBACKS        0U /* NAND register callback disabled      */
-#define  USE_HAL_NOR_REGISTER_CALLBACKS         0U /* NOR register callback disabled       */
-#define  USE_HAL_PCCARD_REGISTER_CALLBACKS      0U /* PCCARD register callback disabled    */
-#define  USE_HAL_PCD_REGISTER_CALLBACKS         0U /* PCD register callback disabled       */
-#define  USE_HAL_QSPI_REGISTER_CALLBACKS        0U /* QSPI register callback disabled      */
-#define  USE_HAL_RNG_REGISTER_CALLBACKS         0U /* RNG register callback disabled       */
-#define  USE_HAL_RTC_REGISTER_CALLBACKS         0U /* RTC register callback disabled       */
-#define  USE_HAL_SAI_REGISTER_CALLBACKS         0U /* SAI register callback disabled       */
-#define  USE_HAL_SD_REGISTER_CALLBACKS          0U /* SD register callback disabled        */
-#define  USE_HAL_SMARTCARD_REGISTER_CALLBACKS   0U /* SMARTCARD register callback disabled */
-#define  USE_HAL_SDRAM_REGISTER_CALLBACKS       0U /* SDRAM register callback disabled     */
-#define  USE_HAL_SRAM_REGISTER_CALLBACKS        0U /* SRAM register callback disabled      */
-#define  USE_HAL_SPDIFRX_REGISTER_CALLBACKS     0U /* SPDIFRX register callback disabled   */
-#define  USE_HAL_SMBUS_REGISTER_CALLBACKS       0U /* SMBUS register callback disabled     */
-#define  USE_HAL_SPI_REGISTER_CALLBACKS         0U /* SPI register callback disabled       */
-#define  USE_HAL_TIM_REGISTER_CALLBACKS         0U /* TIM register callback disabled       */
-#define  USE_HAL_UART_REGISTER_CALLBACKS        0U /* UART register callback disabled      */
-#define  USE_HAL_USART_REGISTER_CALLBACKS       0U /* USART register callback disabled     */
-#define  USE_HAL_WWDG_REGISTER_CALLBACKS        0U /* WWDG register callback disabled      */
+// <h> 系统配置
+
+// <o> VDD 供电电压 单位: mV
+#define VDD_VALUE                            3300UL
+// <o> SysTick 中断优先级
+#define TICK_INT_PRIORITY                    15UL
+// <q> 启用 RTOS (此宏不要启用, ST 预留接口)
+#define USE_RTOS                             0
+// <q> 启用预读取
+#define PREFETCH_ENABLE                      1
+// <q> 启用指令 Cache
+#define INSTRUCTION_CACHE_ENABLE             1
+// <q> 启用数据 Cache
+#define DATA_CACHE_ENABLE                    1
+// <q> 启用 SPI CRC 校验
+#define USE_SPI_CRC                          1
+
+// </h>
+
+/* ########################## Register Callbacks selection ############################## */
+
+// <h> 中断回调配置
+
+//  <q> 启用 ADC (Analog-to-digital convert) 中断注册回调函数
+#define USE_HAL_ADC_REGISTER_CALLBACKS       0
+//  <q> 启用 CAN (Controller area network) 中断注册回调函数
+#define USE_HAL_CAN_REGISTER_CALLBACKS       0
+//  <q> 启用 CEC (Consumer electronic controller) 中断注册回调函数
+#define USE_HAL_CEC_REGISTER_CALLBACKS       0
+//  <q> 启用 CRYP (Cryptographic processor) 中断注册回调函数
+#define USE_HAL_CRYP_REGISTER_CALLBACKS      0
+//  <q> 启用 DAC (Digital to analog converter) 中断注册回调函数
+#define USE_HAL_DAC_REGISTER_CALLBACKS       0
+//  <q> 启用 DCMI (Digital camera interface) 中断注册回调函数
+#define USE_HAL_DCMI_REGISTER_CALLBACKS      0
+//  <q> 启用 DFSDM (Digital filter sigma delta modulator) 中断注册回调函数
+#define USE_HAL_DFSDM_REGISTER_CALLBACKS     0
+//  <q> 启用 DMA2D 中断注册回调函数
+#define USE_HAL_DMA2D_REGISTER_CALLBACKS     0
+//  <q> 启用 DSI (Display serial interface) 中断注册回调函数
+#define USE_HAL_DSI_REGISTER_CALLBACKS       0
+//  <q> 启用 ETH (Ethernet controller) 中断注册回调函数
+#define USE_HAL_ETH_REGISTER_CALLBACKS       0
+//  <q> 启用 HASH (Hash processor) 中断注册回调函数
+#define USE_HAL_HASH_REGISTER_CALLBACKS      0
+//  <q> 启用 HCD (USB host controller driver) 中断注册回调函数
+#define USE_HAL_HCD_REGISTER_CALLBACKS       0
+//  <q> 启用 I2C (Inter-integrated circuit) 中断注册回调函数
+#define USE_HAL_I2C_REGISTER_CALLBACKS       0
+//  <q> 启用 FMPI2C (Fast-mode Plus Inter-integrated circuit) 中断注册回调函数
+#define USE_HAL_FMPI2C_REGISTER_CALLBACKS    0
+//  <q> 启用 FMPSMBUS (Fast-mode System Management Bus) 中断注册回调函数
+#define USE_HAL_FMPSMBUS_REGISTER_CALLBACKS  0
+//  <q> 启用 I2S (Inter-integrated sound) 中断注册回调函数
+#define USE_HAL_I2S_REGISTER_CALLBACKS       0
+//  <q> 启用 IRDA (Infrared data association) 中断注册回调函数
+#define USE_HAL_IRDA_REGISTER_CALLBACKS      0
+//  <q> 启用 LPTIM (Low-power timer) 中断注册回调函数
+#define USE_HAL_LPTIM_REGISTER_CALLBACKS     0
+//  <q> 启用 LTDC (LCD TFT display controller) 中断注册回调函数
+#define USE_HAL_LTDC_REGISTER_CALLBACKS      0
+//  <q> 启用 MMC (MultiMediaCard) 中断注册回调函数
+#define USE_HAL_MMC_REGISTER_CALLBACKS       0
+//  <q> 启用 NAND Flash 中断注册回调函数
+#define USE_HAL_NAND_REGISTER_CALLBACKS      0
+//  <q> 启用 Nor Flash 中断注册回调函数
+#define USE_HAL_NOR_REGISTER_CALLBACKS       0
+//  <q> 启用 PC Card 中断注册回调函数
+#define USE_HAL_PCCARD_REGISTER_CALLBACKS    0
+//  <q> 启用 PCD (USB peripheral controller driver) 中断注册回调函数
+#define USE_HAL_PCD_REGISTER_CALLBACKS       0
+//  <q> 启用 QSPI (Quad-SPI Flash memory) 中断注册回调函数
+#define USE_HAL_QSPI_REGISTER_CALLBACKS      0
+//  <q> 启用 RNG (Random number generator) 中断注册回调函数
+#define USE_HAL_RNG_REGISTER_CALLBACKS       0
+//  <q> 启用 RTC (Real-time clock) 中断注册回调函数
+#define USE_HAL_RTC_REGISTER_CALLBACKS       0
+//  <q> 启用 SAI (Serial audio interface) 中断注册回调函数
+#define USE_HAL_SAI_REGISTER_CALLBACKS       0
+//  <q> 启用 SD (Secure digital) 中断注册回调函数
+#define USE_HAL_SD_REGISTER_CALLBACKS        0
+//  <q> 启用 SMARTCARD (Smartcard IC) 中断注册回调函数
+#define USE_HAL_SMARTCARD_REGISTER_CALLBACKS 0
+//  <q> 启用 SDRAM (Synchronous dynamic RAM) 中断注册回调函数
+#define USE_HAL_SDRAM_REGISTER_CALLBACKS     0
+//  <q> 启用 SRAM (SRAM external memory) 中断注册回调函数
+#define USE_HAL_SRAM_REGISTER_CALLBACKS      0
+//  <q> 启用 SPDIFRX (SPDIF-RX Receiver interface) 中断注册回调函数
+#define USE_HAL_SPDIFRX_REGISTER_CALLBACKS   0
+//  <q> 启用 SMBUS (System management bus) 中断注册回调函数
+#define USE_HAL_SMBUS_REGISTER_CALLBACKS     0
+//  <q> 启用 SPI (Serial peripheral interface) 中断注册回调函数
+#define USE_HAL_SPI_REGISTER_CALLBACKS       0
+//  <q> 启用 TIM (Advanced-control, general-purpose or basic timer) 中断注册回调函数
+#define USE_HAL_TIM_REGISTER_CALLBACKS       0
+//  <q> 启用 UART (Universal asynchronous receiver/transmitter) 中断注册回调函数
+#define USE_HAL_UART_REGISTER_CALLBACKS      0
+//  <q> 启用 USART (Universal synchronous receiver/transmitter) 中断注册回调函数
+#define USE_HAL_USART_REGISTER_CALLBACKS     0
+//  <q> 启用 WWDG (Window watchdog) 中断注册回调函数
+#define USE_HAL_WWDG_REGISTER_CALLBACKS      0
+
+// </h>
 
 /* ########################## Assert Selection ############################## */
 /**
-  * @brief Uncomment the line below to expanse the "assert_param" macro in the 
+  * @brief Uncomment the line below to expanse the "assert_param" macro in the
   *        HAL drivers code
   */
-/* #define USE_FULL_ASSERT    1U */
+
+// <c> 启用断言
+//#define USE_FULL_ASSERT                      1U
+// </c>
 
 /* ################## Ethernet peripheral configuration ##################### */
 
 /* Section 1 : Ethernet peripheral configuration */
 
-/* MAC ADDRESS: MAC_ADDR0:MAC_ADDR1:MAC_ADDR2:MAC_ADDR3:MAC_ADDR4:MAC_ADDR5 */
-#define MAC_ADDR0   2U
-#define MAC_ADDR1   0U
-#define MAC_ADDR2   0U
-#define MAC_ADDR3   0U
-#define MAC_ADDR4   0U
-#define MAC_ADDR5   0U
+// <o> MAC 地址 0
+#define ETH_MAC_ADDR0                        0x02UL
+// <o> MAC 地址 1
+#define ETH_MAC_ADDR1                        0x00UL
+// <o> MAC 地址 2
+#define ETH_MAC_ADDR2                        0x00UL
+// <o> MAC 地址 3
+#define ETH_MAC_ADDR3                        0x00UL
+// <o> MAC 地址 4
+#define ETH_MAC_ADDR4                        0x00UL
+// <o> MAC 地址 5
+#define ETH_MAC_ADDR5                        0x00UL
 
-/* Definition of the Ethernet driver buffers size and count */   
-#define ETH_RX_BUF_SIZE                1528U               /* ETH Max buffer size for receive       */
-#define ETH_TX_BUF_SIZE                1528U               /* ETH Max buffer size for transmit      */
-#define ETH_RXBUFNB                    4U                  /* 4 Rx buffers of size ETH_RX_BUF_SIZE  */
-#define ETH_TXBUFNB                    4U                  /* 4 Tx buffers of size ETH_TX_BUF_SIZE  */
+// <o> 接收缓冲区大小
+#define ETH_RX_BUF_SIZE                      1528U
+// <o> 接收缓冲区单个数据大小
+#define ETH_RXBUFNB                          4U
+// <o> 发送缓冲区大小
+#define ETH_TX_BUF_SIZE                      1528U
+// <o> 发送缓冲区单个数据大小
+#define ETH_TXBUFNB                          4U
+
+// </h>
+
+//------------- <<< end of configuration section >>> ---------------------------
+
+/* clang-format off */
 
 /* Section 2: PHY configuration section */
 
@@ -261,15 +480,6 @@
 
 #define PHY_MISR_LINK_INT_EN            ((uint16_t)0x0020)  /*!< Enable Interrupt on change of link status       */
 #define PHY_LINK_INTERRUPT              ((uint16_t)0x2000)  /*!< PHY link status interrupt mask                  */
-
-/* ################## SPI peripheral configuration ########################## */
-
-/* CRC FEATURE: Use to activate CRC feature inside HAL SPI Driver
-* Activated: CRC code is present inside driver
-* Deactivated: CRC code cleaned from driver
-*/
-
-#define USE_SPI_CRC                     1U
 
 /* Includes ------------------------------------------------------------------*/
 /**
@@ -331,6 +541,10 @@
 #ifdef HAL_ETH_MODULE_ENABLED
   #include "stm32f4xx_hal_eth.h"
 #endif /* HAL_ETH_MODULE_ENABLED */
+
+#ifdef HAL_ETH_LEGACY_MODULE_ENABLED
+  #include "stm32f4xx_hal_eth_legacy.h"
+#endif /* HAL_ETH_LEGACY_MODULE_ENABLED */
 
 #ifdef HAL_FLASH_MODULE_ENABLED
   #include "stm32f4xx_hal_flash.h"
@@ -495,6 +709,3 @@
 #endif
 
 #endif /* __STM32F4xx_HAL_CONF_H */
- 
-
-
