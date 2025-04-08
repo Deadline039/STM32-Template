@@ -25,15 +25,15 @@ int main(void) {
         key = key_scan(0);
         switch (key) {
             case WKUP_PRESS: {
-                printf("Wake Up Pressed. \r\n");
+                printf("Wake Up Pressed. \n");
             } break;
 
             case KEY0_PRESS: {
-                printf("KEY0 Pressed. \r\n");
+                printf("KEY0 Pressed. \n");
             } break;
 
             case KEY1_PRESS: {
-                printf("KEY1 Pressed. \r\n");
+                printf("KEY1 Pressed. \n");
             } break;
 
             default: {
@@ -41,7 +41,7 @@ int main(void) {
         }
 
         if (count == 100) {
-            printf("STM32F1xx bare project template. Running time: %d ms. \r\n",
+            printf("STM32F1xx bare project template. Running time: %u ms. \n",
                    HAL_GetTick());
             LED0_TOGGLE();
             LED1_TOGGLE();

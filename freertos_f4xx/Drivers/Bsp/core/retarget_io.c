@@ -212,7 +212,7 @@ void _sys_exit(int x) {
  * @param line Line.
  */
 void __aeabi_assert(const char *expr, const char *file, int line) {
-    fprintf(stderr, "Assertion failed: %s, file: %s, line: %d\r\n", expr, file,
+    fprintf(stderr, "Assertion failed: %s, file: %s, line: %d\n", expr, file,
             line);
     while (1) {
         /* Go to endless loop when assert failed. */

@@ -75,7 +75,7 @@ void task2(void *pvParameters) {
     UNUSED(pvParameters);
 
     while (1) {
-        printf("STM32F1xx FreeRTOS project template. Running time: %d ms. \r\n",
+        printf("STM32F1xx FreeRTOS project template. Running time: %u ms. \n",
                xTaskGetTickCount());
         vTaskDelay(1000);
     }
@@ -95,15 +95,15 @@ void task3(void *pvParameters) {
         key = key_scan(0);
         switch (key) {
             case WKUP_PRESS: {
-                printf("Wake Up Pressed. \r\n");
+                printf("Wake Up Pressed. \n");
             } break;
 
             case KEY0_PRESS: {
-                printf("KEY0 Pressed. \r\n");
+                printf("KEY0 Pressed. \n");
             } break;
 
             case KEY1_PRESS: {
-                printf("KEY1 Pressed. \r\n");
+                printf("KEY1 Pressed. \n");
             } break;
 
             default: {
@@ -123,7 +123,7 @@ void task3(void *pvParameters) {
  * @param ulLine File line
  */
 void vAssertCalled(const char *pcFile, unsigned int ulLine) {
-    fprintf(stderr, "FreeRTOS assert failed. File: %s, line: %d. \n", pcFile,
+    fprintf(stderr, "FreeRTOS assert failed. File: %s, line: %u. \n", pcFile,
             ulLine);
 }
 #endif /* configASSERT */
