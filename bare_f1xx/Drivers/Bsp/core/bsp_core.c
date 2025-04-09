@@ -12,11 +12,11 @@
  * @brief System clock tree configuration.
  *
  * @return Configuration status.
- * @retval 0-`SYSTEM_CORE_CLK_OK`:      Success.
- * @retval 1-`SYSTEM_CORE_HSC_FAIL`:    High speed clock configuration failed.
- * @retval 2-`SYSTEM_CORE_LSC_FAIL`:    Low speed clock configuration failed.
- * @retval 3-`SYSTEM_PERIPH_CLK_FAIL`:  Peripherals(AHB, APB) clock
- *                                      configuration failed.
+ *  @retval - 0: `SYSTEM_CORE_CLK_OK`:      Success.
+ *  @retval - 1: `SYSTEM_CORE_HSC_FAIL`:    High speed clock configuration failed.
+ *  @retval - 2: `SYSTEM_CORE_LSC_FAIL`:    Low speed clock configuration failed.
+ *  @retval - 3: `SYSTEM_PERIPH_CLK_FAIL`:  Peripherals(AHB, APB) clock
+ *                                          configuration failed.
  */
 uint8_t system_clock_config(void) {
     RCC_OscInitTypeDef rcc_osc_init = {0};
