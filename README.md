@@ -10,11 +10,11 @@ STM32G474 的开发板是自己制作的兼容正点原子阿波罗底板的核�
 
 程序下载后可以看到跑马灯，串口 1 每隔 1 秒发送`xxx Template, Runnting Time: xxx ms. `按下按键在串口 1 发送`xxx Pressed`.
 
-感谢@[shanlingjiangjie](https://github.com/shanlingjiangjie) @[PickingChip](https://github.com/PickingChip) @[meiwenhuaqingnian](https://github.com/meiwenhuaqingnian) 的测试。
+感谢@[shanlingjiangjie](https://github.com/shanlingjiangjie) @[PickingChip](https://github.com/PickingChip) @[meiwenhuaqingnian](https://github.com/meiwenhuaqingnian) @[Rlingbo](https://github.com/Rlingbo) 的测试。
 
 感谢@[LuLongXiang](https://github.com/LuLongXiang)绘制的 G474 核心板。
 
-## 使用例程：[https://github.com/Deadline039/STM32-Example](https://github.com/Deadline039/STM32-Example)，电机驱动：[https://github.com/XJU-Hurricane-Team/STM32-Motor-Driver](https://github.com/XJU-Hurricane-Team/STM32-Motor-Driver)
+## 使用例程：[https://github.com/Deadline039/STM32-Example](https://github.com/Deadline039/STM32-Example)，驱动：[https://github.com/XJU-Hurricane-Team/STM32-Driver](https://github.com/XJU-Hurricane-Team/STM32-Driver)
 
 ## [更新日志](./CHANGELOG.md)
 
@@ -26,7 +26,7 @@ Bsp 层添加了按键，LED, 串口和 C 库系统 IO 重定义。默认只启�
 
 在`User/Application/Inc/version.h`中定义了模板版本号，可以通过其中预定义的一些函数来获取。
 
-CSP 层配置`Drivers/CSP/Config/CSP_Config.h`, FreeRTOS 配置`User/Application/Inc/FreeRTOSConfig.h`支持 CMSIS Configuration Wizard, 可以使用图形化界面来配置，参照：[CMSIS 头文件配置向导](https://em-ide.com/zh-cn/docs/advance/cmsis_cfg_wizard)，[CMSIS 配置向导标记 | Deadline039](https://deadline039.github.io/Embedded/cmsis_config_wizard).
+CSP 层配置`Drivers/CSP/Config/CSP_Config.h`, FreeRTOS 配置`User/Application/Inc/FreeRTOSConfig.h`, HAL 库配置`User/Applicaiton/Inc/stm32xxx_hal_conf.h`支持 CMSIS Configuration Wizard, 可以使用图形化界面来配置，参照：[CMSIS 头文件配置向导](https://em-ide.com/zh-cn/docs/advance/cmsis_cfg_wizard)，[CMSIS 配置向导标记 | Deadline039](https://deadline039.github.io/Embedded/cmsis_config_wizard).
 
 ![](./assets/config_wizard.png)
 
@@ -37,6 +37,18 @@ CSP 层配置`Drivers/CSP/Config/CSP_Config.h`, FreeRTOS 配置`User/Application
 为简化芯片外设的初始化与使用，CSP 层配置文件（位于 Drivers/）可以用图形化界面选择开启或者关闭某个外设，并且可以很方便地查看与修改引脚与 DMA 通道，而且可以检测引脚是否在当前芯片可用，大大简化了外设的初始化与配置流程：
 
 ![](./assets/csp_config.png)
+
+支持情况如下表：
+
+| 芯片家族 | 支持外设 | 备注 |
+| :-----: | :-----: | :---------: |
+| STM32F1xx | UART, I2C, SPI, CAN, RTC, ETH | |
+| STM32F4xx | UART, I2C, SPI, QSPI, CAN, RTC, ETH | |
+| STM32G4xx | UART, I2C, SPI, QSPI, FDCAN, RTC | |
+| STM32H7xx | UART, I2C, SPI, QSPI, FDCAN, RTC | 暂不支持 H7Ax, H7Bx 系列 |
+
+1. FDCAN 波特率计算暂时只支持 CAN Classic
+2. 计划添加的外设: SDIO/MMC, USB FS/HS.
 
 # 使用方法
 
