@@ -76,7 +76,7 @@ uint8_t system_clock_config(void) {
     }
 #endif /* LPUART1_ENABLE */
 
-#if USART1_ENABLE 
+#if USART1_ENABLE
     /* Use PCLK2 (170 MHz) to USART1 clock source. */
     periph_clk_init_struct.PeriphClockSelection = RCC_PERIPHCLK_USART1;
     periph_clk_init_struct.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK2;
@@ -85,7 +85,7 @@ uint8_t system_clock_config(void) {
     }
 #endif /* USART1_ENABLE */
 
-#if USART2_ENABLE 
+#if USART2_ENABLE
     /* Use PCLK1 (170 MHz) to USART2 clock source. */
     periph_clk_init_struct.PeriphClockSelection = RCC_PERIPHCLK_USART2;
     periph_clk_init_struct.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
@@ -94,7 +94,7 @@ uint8_t system_clock_config(void) {
     }
 #endif /* USART2_ENABLE */
 
-#if USART3_ENABLE 
+#if USART3_ENABLE
     /* Use PCLK1 (170 MHz) to USART3 clock source. */
     periph_clk_init_struct.PeriphClockSelection = RCC_PERIPHCLK_USART3;
     periph_clk_init_struct.Usart3ClockSelection = RCC_USART3CLKSOURCE_PCLK1;

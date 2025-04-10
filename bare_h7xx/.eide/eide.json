@@ -166,6 +166,9 @@
               },
               {
                 "path": "Drivers/STM32_HAL_Driver/Src/stm32h7xx_hal_qspi.c"
+              },
+              {
+                "path": "Drivers/STM32_HAL_Driver/Src/stm32h7xx_hal_spi_ex.c"
               }
             ],
             "folders": []
@@ -271,7 +274,8 @@
         "<virtual_root>/Drivers/CSP/CAN_STM32H7xx.c",
         "<virtual_root>/Drivers/CSP/I2C_STM32H7xx.c",
         "<virtual_root>/Drivers/CSP/RTC_STM32H7xx.c",
-        "<virtual_root>/Drivers/CSP/SPI_STM32H7xx.c"
+        "<virtual_root>/Drivers/CSP/SPI_STM32H7xx.c",
+        "<virtual_root>/Drivers/HAL_Driver/stm32h7xx_hal_spi_ex.c"
       ],
       "toolchain": "AC6",
       "compileConfig": {

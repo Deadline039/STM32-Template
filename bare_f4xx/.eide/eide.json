@@ -148,6 +148,9 @@
               },
               {
                 "path": "Drivers/STM32_HAL_Driver/Src/stm32f4xx_ll_fmc.c"
+              },
+              {
+                "path": "Drivers/STM32_HAL_Driver/Src/stm32f4xx_hal_spi.c"
               }
             ],
             "folders": []
@@ -253,7 +256,8 @@
         "<virtual_root>/Drivers/HAL_Driver/stm32f4xx_hal_tim.c",
         "<virtual_root>/Drivers/HAL_Driver/stm32f4xx_hal_usart.c",
         "<virtual_root>/Drivers/HAL_Driver/stm32f4xx_hal_wwdg.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32f4xx_ll_fmc.c"
+        "<virtual_root>/Drivers/HAL_Driver/stm32f4xx_ll_fmc.c",
+        "<virtual_root>/Drivers/HAL_Driver/stm32f4xx_hal_spi.c"
       ],
       "toolchain": "AC6",
       "compileConfig": {

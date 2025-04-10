@@ -111,7 +111,7 @@ uint8_t system_clock_config(void) {
 #endif /* USART1_ENABLE || USART6_ENABLE */
 
 #if (USART2_ENABLE || USART3_ENABLE || UART4_ENABLE || UART5_ENABLE ||         \
-     UART7_ENABLE || UART8_ENALBE)
+     UART7_ENABLE || UART8_ENABLE)
     /* Use PCLK1 (120 MHz) to U(S)ART2,3,4,5,7,8 clock source. */
     rcc_periph_init_struct.PeriphClockSelection = RCC_PERIPHCLK_USART234578;
     rcc_periph_init_struct.Usart234578ClockSelection =
@@ -120,7 +120,7 @@ uint8_t system_clock_config(void) {
     if (res != HAL_OK) {
         return SYSTEM_PERIPH_CLK_FAIL;
     }
-#endif /* USART2_ENABLE || USART3_ENABLE || UART4_ENABLE || UART5_ENABLE || UART7_ENABLE || UART8_ENALBE */
+#endif /* USART2_ENABLE || USART3_ENABLE || UART4_ENABLE || UART5_ENABLE || UART7_ENABLE || UART8_ENABLE */
 
     /*## QUADSPI clock configuration. #######################################*/
 #if QUADSPI_ENABLE

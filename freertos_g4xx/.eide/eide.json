@@ -203,6 +203,9 @@
               },
               {
                 "path": "Drivers/CSP/CAN_STM32G4xx.c"
+              },
+              {
+                "path": "Drivers/CSP/RTC_STM32G4xx.c"
               }
             ],
             "folders": []
@@ -308,7 +311,10 @@
         "<virtual_root>/Drivers/HAL_Driver/stm32g4xx_hal_usart_ex.c",
         "<virtual_root>/Drivers/HAL_Driver/stm32g4xx_hal_usart.c",
         "<virtual_root>/Drivers/HAL_Driver/stm32g4xx_hal_wwdg.c",
-        "<virtual_root>/Drivers/HAL_Driver/stm32g4xx_ll_fmc.c"
+        "<virtual_root>/Drivers/HAL_Driver/stm32g4xx_ll_fmc.c",
+        "<virtual_root>/Drivers/CSP/RTC_STM32G4xx.c",
+        "<virtual_root>/Drivers/HAL_Driver/stm32g4xx_hal_spi_ex.c",
+        "<virtual_root>/Drivers/HAL_Driver/stm32g4xx_hal_spi.c"
       ],
       "toolchain": "AC6",
       "compileConfig": {

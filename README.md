@@ -173,7 +173,6 @@ DMA, GPIO, PWR, RCC, UART
 |    -Wno-implicit-int-conversion    |                                         隐式整数转换（大范围到小范围，如`int32_t -> int16_t`)                                         |
 |       -Wno-double-promotion        |                                             隐式浮点转换（提高精度，如`float -> double`)                                              |
 |  -Wno-missing-field-initializers   |                                                            未初始化的变量                                                             |
-|             -Wno-undef             |                                                           未定义就使用的宏                                                            |
 |          -Wno-self-assign          |                                                            为自己分配字段                                                             |
 |        -Wno-extra-semi-stmt        |                                                          空语句有多余的分号                                                           |
 | -Wno-missing-variable-declarations |                                           全局变量没有外部声明（在该源文件包含的头文件中）                                            |
