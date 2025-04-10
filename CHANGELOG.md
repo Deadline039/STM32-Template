@@ -1,5 +1,43 @@
 # Change Log
 
+### [v3.3.0] 2025-3-10
+
+*** Note ***
+
+- 添加 H7 模板
+
+- HAL 库配置添加 CMSIS Config Wizard
+
+- 添加 QSPI
+
+- G4, H7 I2C 集成时序计算
+
+- I2C 初始化单位改为 kHz
+
+- G4 添加外设时钟配置
+
+- CSP 头文件添加版本号
+
+- 打开编译器 `-Wundef` 警告
+
+- F1 判断外设初始化状态改为`HAL_xxx_GetState`
+
+*** Fix ***
+
+- I2C deinit 函数没有关闭中断
+
+- G4 FDCAN deinit 函数会被中断宏定义屏蔽
+
+- 配置文件语法错误导致 Keil 解析错误
+
+- G4 LPUART 没有加 DMA 判断
+
+- F1 去掉 UART5 DMA 判断
+
+- 若干注释错误
+
+- 某些外设初始化状态枚举类型错误
+
 ### [v3.2.0] 2025-3-17
 
 ***Note***
