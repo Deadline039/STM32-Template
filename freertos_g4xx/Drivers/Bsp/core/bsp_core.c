@@ -9,16 +9,6 @@
 #include "bsp_core.h"
 
 /**
- * @file    bsp_core.c
- * @author  Deadline039
- * @brief   System core configuration.
- * @version 1.0
- * @date    2024-12-03
- */
-
-#include "bsp_core.h"
-
-/**
  * @brief System clock tree configuration.
  *
  * @return Configuration status.
