@@ -34,7 +34,7 @@ CSP 层配置`Drivers/CSP/Config/CSP_Config.h`, FreeRTOS 配置`User/Application
 
 ## 芯片支持包（Chip Support Package）
 
-为简化芯片外设的初始化与使用，CSP 层配置文件（位于 Drivers/）可以用图形化界面选择开启或者关闭某个外设，并且可以很方便地查看与修改引脚与 DMA 通道，而且可以检测引脚是否在当前芯片可用，大大简化了外设的初始化与配置流程：
+为简化芯片外设的初始化与使用，CSP 层配置文件（位于 Drivers/CSP/CSP_Config.h）可以用图形化界面选择开启或者关闭某个外设，并且可以很方便地查看与修改引脚与 DMA 通道，而且可以检测引脚是否在当前芯片可用，大大简化了外设的初始化与配置流程：
 
 ![](./assets/csp_config.png)
 
