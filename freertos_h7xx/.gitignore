@@ -13,7 +13,9 @@
 *.ept
 *.eide-template
 
+# macOS files
 .DS_Store
+__MACOSX__
 
 # User-specific uVision files
 *.opt
