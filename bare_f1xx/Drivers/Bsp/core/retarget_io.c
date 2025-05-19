@@ -140,7 +140,7 @@ int _write(int file, char *str, int len) {
     if (file == 1) {
 #ifdef STDOUT_UART
         for (int i = 0; i < len; ++i) {
-            __io_putchar_uart(STDOUT_UART);
+            __io_putchar_uart(STDOUT_UART, str[i]);
 #else /* STDOUT_UART */
         /* Your implement here. */
 
@@ -149,7 +149,7 @@ int _write(int file, char *str, int len) {
     } else if (file == 2) {
 #ifdef STDERR_UART
         for (int i = 0; i < len; ++i) {
-            __io_putchar_uart(STDERR_UART);
+            __io_putchar_uart(STDERR_UART, str[i]);
 #else /* STDERR_UART */
     /* Your implement here. */
 
